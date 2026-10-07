@@ -1,0 +1,52 @@
+.product_card {
+  .product_img_1 {
+    transition: all 0.4s ease;
+    display: block;
+  }
+  .product_img_2 {
+    transition: all 0.4s ease;
+    display: none;
+  }
+  .add_to_bag_btn {
+    display: flex;
+    align-items: center;
+    padding-inline: 11px;
+    padding-block: 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #888787;
+    background: #e5e5e5;
+
+    gap: 0;
+    transition: gap 0.4s ease;
+
+    .abb_to_bag_text {
+      font-size: 16px;
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition:
+        max-width 0.45s ease,
+        opacity 0.3s ease;
+    }
+  }
+
+  // Hover the whole product card
+  &:hover {
+    .product_img_1 {
+      display: none;
+    }
+    .product_img_2 {
+      display: block;
+    }
+    .add_to_bag_btn {
+      gap: 0.5rem;
+
+      .abb_to_bag_text {
+        max-width: 150px;
+        opacity: 1;
+      }
+    }
+  }
+}

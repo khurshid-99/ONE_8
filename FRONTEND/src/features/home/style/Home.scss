@@ -1,0 +1,31 @@
+.men_50 {
+  .men_img_wrapper {
+    width: 742px;
+    transition:
+      width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    .men_img {
+      width: 725px;
+      transition:
+        width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .men_side_text {
+      transition:
+        opacity 0.4s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  &:hover {
+    .men_img_wrapper {
+      width: 928px;
+
+      .men_img {
+        width: 906px;
+      }
+    }
+  }
+}

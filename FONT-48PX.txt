@@ -1,0 +1,25 @@
+FONT-48PX
+     36PX
+     30PX
+     24PX
+     20PX
+     18PX
+     16PX
+     14PX
+     12PX
+     10PX
+
+COLOR-
+    #FFFFFF
+    #000000
+    #1A1A1A
+    #E5E5E5
+    #222222
+    #00FFFF
+    #AAAAAA
+    #808080
+
+PADDING-
+     32PX
+     24PX
+     16PX

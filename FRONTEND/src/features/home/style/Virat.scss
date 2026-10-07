@@ -1,0 +1,19 @@
+.virat_card {
+  .virat_card_logo_8 {
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: top 0.3s ease;
+  }
+  .virat_card_btn {
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    .virat_card_logo_8 {
+      top: 9.5rem;
+    }
+    .virat_card_btn {
+      opacity: 1;
+    }
+  }
+}
