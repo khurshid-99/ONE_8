@@ -17,7 +17,26 @@ import Men from "../src/assets/home/mens.webp";
 
 import AnOdeToCricket from "../src/assets/home/cricket_home.webp";
 
+import OdeCricket from "../src/assets/home/navbar/Ode_to_cricket.webp";
+import AcctiveLife from "../src/assets/home/navbar/acctive_lifestyle.webp";
+import HybridWorkouot from "../src/assets/home/navbar/hybrid_workout.webp";
+
+import Running from "../src/assets/home/navbar/Running.webp";
+import sfvfv from "../src/assets/home/navbar/sfvfv.webp";
+import csdcfdvf from "../src/assets/home/navbar/csdcfdvf.webp";
+
+import scvfvcsv from "../src/assets/home/navbar/scvfvcsv.webp";
+import Retouched from "../src/assets/home/navbar/Retouched_Image.webp";
+
 export {
+  scvfvcsv,
+  Retouched,
+  Running,
+  sfvfv,
+  csdcfdvf,
+  OdeCricket,
+  AcctiveLife,
+  HybridWorkouot,
   AnOdeToCricket,
   Women,
   Men,

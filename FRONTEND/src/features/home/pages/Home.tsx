@@ -19,10 +19,13 @@ import ViratCard from "../components/ViratCard";
 import "../style/Virat.scss";
 import "../style/Home.scss";
 import { Link } from "react-router";
+import Navbar from "../../../utils/nav/Navbar";
 
 const Home = () => {
   return (
-    <main className="w-full">
+    <main className="w-full relative">
+      <Navbar />
+      
       <header className="w-full h-screen relative ">
         <img
           src={HeroImg}
