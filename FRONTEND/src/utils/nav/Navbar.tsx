@@ -1,7 +1,7 @@
 // -------------------
 
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import gsap from "gsap";
 
 import "./Navbar.style.scss";
@@ -55,7 +55,7 @@ const trendingSearches = [
 const navData: Record<string, MegaMenuData> = {
   Featured: {
     title: "Featured",
-    href: "/collections/featured-all",
+    href: "/featured-all",
     menu: [
       {
         title: "An Ode to Cricket ",
@@ -391,6 +391,8 @@ const accountLinks = [
 const topLinks = ["Featured", "Women", "Men", "Kids"];
 
 export default function Navbar() {
+  const path = useLocation();
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
@@ -612,7 +614,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navbarRef}
-        className={`top_navbar absolute z-999 w-full h-90p flex items-center justify-between px-40p   ${activeData ? "bg-white text-black placeholder:text-light " : "text-white placeholder:text-white"} `}
+        className={`top_navbar absolute z-999 w-full h-90p flex items-center justify-between px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}`}
       >
         {/* Desktop navigation */}
 
@@ -667,15 +669,15 @@ export default function Navbar() {
                     cy="10"
                     r="6"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></circle>
                   <path
                     d="M14.5 14.5L19 19"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </button>
@@ -705,9 +707,9 @@ export default function Navbar() {
                   <path
                     d="M19.6706 5.4736C17.6806 3.8336 14.7206 4.1236 12.8906 5.9536L12.0006 6.8436L11.1106 5.9536C9.29063 4.1336 6.32064 3.8336 4.33064 5.4736C2.05064 7.3536 1.93063 10.7436 3.97063 12.7836L11.6406 20.4536C11.8406 20.6536 12.1506 20.6536 12.3506 20.4536L20.0206 12.7836C22.0706 10.7436 21.9506 7.3636 19.6706 5.4736Z"
                     stroke="currentColor"
-                    stroke-miterlimit="10"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </Link>
@@ -729,8 +731,8 @@ export default function Navbar() {
                   ></path>
                   <path
                     id="svgkp-path"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M16.6079 5.35819C16.4805 5.1933 16.3421 5.03582 16.1932 4.8869C15.2702 3.96387 14.0183 3.44531 12.7129 3.44531C11.4075 3.44531 10.1556 3.96387 9.2326 4.8869C8.30957 5.80993 7.79102 7.06183 7.79102 8.36719C7.79102 9.67255 8.30957 10.9244 9.2326 11.8475C9.48368 12.0986 9.75909 12.3197 10.0533 12.5086L11.0235 11.4503C10.7335 11.2914 10.4649 11.0911 10.227 10.8531C9.56766 10.1938 9.19727 9.29959 9.19727 8.36719C9.19727 7.43479 9.56766 6.54057 10.227 5.88127C10.8863 5.22196 11.7805 4.85156 12.7129 4.85156C13.6453 4.85156 14.5395 5.22196 15.1988 5.88127C15.3636 6.04604 15.5103 6.22549 15.6377 6.41654L16.6079 5.35819ZM20.6413 18.6497L19.6746 19.7132C20.1676 20.4122 20.4473 21.2264 20.4473 22.0781V23.8359C20.4473 24.2243 20.7621 24.5391 21.1504 24.5391C21.5387 24.5391 21.8535 24.2243 21.8535 23.8359V22.0781C21.8535 20.7863 21.4016 19.6103 20.6413 18.6497ZM12.3111 17.5078H10.3026C7.27113 17.5078 4.97852 19.6394 4.97852 22.0781V23.8359C4.97852 24.2243 4.66372 24.5391 4.27539 24.5391C3.88707 24.5391 3.57227 24.2243 3.57227 23.8359V22.0781C3.57227 18.6922 6.67684 16.1016 10.3026 16.1016H12.4885L12.3111 17.5078Z"
                     fill="currentColor"
                     stroke="currentColor"
@@ -751,12 +753,12 @@ export default function Navbar() {
                   <path
                     d="M6.66602 11.3333C6.66602 10.2288 7.56145 9.33334 8.66602 9.33334H23.3327C24.4373 9.33334 25.3327 10.2288 25.3327 11.3333V25C25.3327 26.6569 23.9895 28 22.3327 28H9.66601C8.00916 28 6.66602 26.6569 6.66602 25V11.3333Z"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                   ></path>
                   <path
                     d="M20 13.3333V7C20 5.34315 18.6569 4 17 4H15C13.3431 4 12 5.34314 12 7V13.3333"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                   ></path>
                 </svg>
               </Link>
