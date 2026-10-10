@@ -28,7 +28,12 @@ import csdcfdvf from "../src/assets/home/navbar/csdcfdvf.webp";
 import scvfvcsv from "../src/assets/home/navbar/scvfvcsv.webp";
 import Retouched from "../src/assets/home/navbar/Retouched_Image.webp";
 
-export {
+import Arrow from "../src/assets/arrow.svg"
+import ArrowDown from "../src/assets/arrow_down.svg"
+
+
+export {ArrowDown,
+  Arrow,
   scvfvcsv,
   Retouched,
   Running,
