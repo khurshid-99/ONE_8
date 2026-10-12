@@ -36,7 +36,7 @@ const ActiveLifestyle = () => {
           <div className="flex items-start gap-3 mb-24p px-24p ">
             <Link
               to={""}
-              className="inline-block w-[398px] aspect-398/466 bg-light rounded-sm overflow-hidden "
+              className="inline-block w-99.5 aspect-398/466 bg-light rounded-sm overflow-hidden "
             >
               <div className="w-full aspect-398/398 object-center object-cover ">
                 <img src={ActiveLifestyleWomen1} alt="" />

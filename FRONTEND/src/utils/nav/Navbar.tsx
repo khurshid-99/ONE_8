@@ -778,7 +778,7 @@ export default function Navbar() {
           <div className="mega_menu_inner justify-between ">
             {/* Left */}
 
-            <div className="mega_menu_links w-[330px]  bg-light flex flex-col justify-between pl-40p py-22p pr-16p ">
+            <div className="mega_menu_links w-82.5 bg-light flex flex-col justify-between pl-40p py-22p pr-16p ">
               <ul className="flex flex-col mb-62p">
                 {activeData?.menu.map((item) => (
                   <li

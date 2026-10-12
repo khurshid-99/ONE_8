@@ -61,7 +61,7 @@ const productCard = () => {
             <button className="w-24p aspect-square rounded-full bg-[#6a6abb] "></button>
             <button className="w-24p aspect-square rounded-full bg-[#f71515] "></button>
             <button className="w-24p aspect-square rounded-full bg-[#8f96ff] "></button>
-            <button className="w-24p aspect-square rounded-full bg-[#000000] "></button>
+            <button className="w-24p aspect-square rounded-full bg-black "></button>
           </div>
           <button className="add_to_bag_btn">
             <svg
