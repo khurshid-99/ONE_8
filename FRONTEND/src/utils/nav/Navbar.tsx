@@ -7,13 +7,13 @@ import gsap from "gsap";
 import "./Navbar.style.scss";
 import {
   AcctiveLife,
-  csdcfdvf,
   HybridWorkouot,
   OdeCricket,
   Retouched,
   Running,
-  scvfvcsv,
+  Gym,
   sfvfv,
+  MenRunning,
 } from "../../images";
 
 type MenuLink = {
@@ -55,23 +55,23 @@ const trendingSearches = [
 const navData: Record<string, MegaMenuData> = {
   Featured: {
     title: "Featured",
-    href: "/featured-all",
+    href: "/collections/featured-all",
     menu: [
       {
         title: "An Ode to Cricket ",
-        href: "/collections/seam-collection",
+        href: "/pages/an-ode-to-cricket",
       },
       {
         title: "Active Lifestyle",
-        href: "/collections/seam-collection",
+        href: "/pages/active-lifestyle",
       },
       {
         title: "Cover Drive",
-        href: "/collections/active-lifestyle",
+        href: "/pages/cover-drive",
       },
       {
         title: "Hybrid Workout",
-        href: "/collections/active-lifestyle",
+        href: "/pages/hybrid-workout",
       },
     ],
 
@@ -79,17 +79,17 @@ const navData: Record<string, MegaMenuData> = {
       {
         title: "Cricket",
         image: OdeCricket,
-        href: "/collections/gym",
+        href: "/collections/cricket-all",
       },
       {
         title: "Active Lifestyle",
         image: AcctiveLife,
-        href: "/collections/sneakers",
+        href: "/collections/active-lifestyle",
       },
       {
         title: "Hybrid Workout",
         image: HybridWorkouot,
-        href: "/collections/sneakers",
+        href: "/collections/hybrid-workout",
       },
     ],
   },
@@ -218,7 +218,7 @@ const navData: Record<string, MegaMenuData> = {
     images: [
       {
         title: "Gym",
-        image: scvfvcsv,
+        image: Gym,
         href: "/collections/women-gym",
       },
       {
@@ -344,7 +344,7 @@ const navData: Record<string, MegaMenuData> = {
       {
         title: "Seam Collection",
         image: sfvfv,
-        href: "/collections/seam-collection",
+        href: "/collections/men-seam",
       },
       {
         title: "Gym",
@@ -353,8 +353,8 @@ const navData: Record<string, MegaMenuData> = {
       },
       {
         title: "Running",
-        image: csdcfdvf,
-        href: "/collections/men-running",
+        image: MenRunning,
+        href: "/collections/men-running-shoes",
       },
     ],
   },
@@ -917,22 +917,22 @@ export default function Navbar() {
                   <path
                     d="M497.583 69.2804C515.98 76.3798 528 93.7611 528 114.325C528 144.191 502.98 165 468.148 165C433.07 165 407.805 144.191 407.805 114.57C407.805 93.7611 419.824 76.3798 438.467 69.2804C428.655 63.1602 422.277 53.1232 422.277 39.6588C422.277 17.1365 440.674 0 468.148 0C495.375 0 514.018 17.1365 514.018 39.6588C514.018 53.1232 507.395 63.1602 497.583 69.2804ZM468.148 19.8294C454.902 19.8294 444.599 29.6217 444.599 41.6172C444.599 53.368 454.902 62.4258 468.148 62.4258C481.394 62.4258 491.451 53.6128 491.451 41.6172C491.451 29.6217 481.394 19.8294 468.148 19.8294ZM468.148 144.926C490.224 144.926 505.433 130.727 505.433 112.856C505.433 93.7611 488.262 80.2967 468.148 80.2967C447.543 80.2967 430.372 94.0059 430.372 112.611C430.372 130.727 446.807 144.926 468.148 144.926Z"
                     fill="currentColor"
-                    fill-opacity="0.03"
+                    fillOpacity="0.03"
                   ></path>
                   <path
                     d="M389.834 104.532C389.834 107.715 389.589 110.897 389.344 114.08H296.131C299.32 134.399 314.038 144.926 333.662 144.926C347.643 144.926 360.399 138.561 367.022 127.055L385.419 134.399C375.607 154.228 355.002 165 332.926 165C300.301 165 274.055 140.764 274.055 104.532C274.055 68.301 300.301 44.7996 332.926 44.7996C365.55 44.7996 389.834 68.301 389.834 104.532ZM296.377 95.7194H368.494C365.795 76.1349 351.814 64.8737 332.926 64.8737C313.547 64.8737 299.811 75.1556 296.377 95.7194Z"
                     fill="currentColor"
-                    fill-opacity="0.03"
+                    fillOpacity="0.03"
                   ></path>
                   <path
                     d="M204.776 44.7996C233.23 44.7996 251.137 63.8945 250.891 95.9642V164.763H229.551V97.1883C229.551 78.0933 217.776 65.853 201.832 65.853C185.888 65.853 166.755 75.4005 166.755 100.126V164.763H145.414V47.7373H166.755V65.1185C173.623 51.1645 192.266 44.7996 204.776 44.7996Z"
                     fill="currentColor"
-                    fill-opacity="0.03"
+                    fillOpacity="0.03"
                   ></path>
                   <path
                     d="M59.8522 165C27.2279 165 0 141.009 0 104.777C0 68.5458 27.2279 44.7996 59.8522 44.7996C92.4766 44.7996 119.95 68.5458 119.95 104.777C119.95 141.009 92.4766 165 59.8522 165ZM59.8522 144.926C80.9477 144.926 98.609 128.524 98.609 104.777C98.609 81.2758 80.9477 64.8737 59.8522 64.8737C39.0021 64.8737 21.5861 81.2758 21.5861 104.777C21.5861 128.524 39.0021 144.926 59.8522 144.926Z"
                     fill="currentColor"
-                    fill-opacity="0.03"
+                    fillOpacity="0.03"
                   ></path>
                 </svg>
               </div>

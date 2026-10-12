@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router";
-import { Shoe1, Shoe2 } from "../../../images";
+import { Shoe1, Shoe2 } from "../../images";
 
-const ProductCart = () => {
+const productCard = () => {
   return (
     <div className="product_card relative w-116 aspect-464/744 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none ">
       <div className="w-full ">
@@ -86,4 +85,4 @@ const ProductCart = () => {
   );
 };
 
-export default ProductCart;
+export default productCard;

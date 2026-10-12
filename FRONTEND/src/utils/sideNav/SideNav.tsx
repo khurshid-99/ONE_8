@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowDown } from "../../images";
+import { useLocation } from "react-router";
 
 type FilterGroup = {
   title: string;
@@ -66,9 +67,11 @@ const filterGroups: FilterGroup[] = [
   },
 ];
 
-const SideNave = () => {
-  const [openGroups, setOpenGroups] = useState<string[]>(["Price"]);
+const SideNav = () => {
+  const [openGroups, setOpenGroups] = useState<string[]>([]);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+
+  const path = useLocation();
 
   const toggleGroup = (title: string) => {
     setOpenGroups((previous) =>
@@ -90,13 +93,12 @@ const SideNave = () => {
     setSelectedFilters([]);
   };
   return (
-    <aside className="sticky top-20 w-101.25 shrink-0 self-start p-20p">
+    <aside className="sticky top-5 w-101.25 shrink-0 self-start p-20p">
       <div className=" flex flex-col ">
         <div className="border-b border-gray-muted w-full ">
-          <h3 className="text-36 leading-44p text-dark-gray font-OB ">
-            Featured - All{" "}
-            <span className="text-16 text-gray-dark font-OR ">
-              {" "}
+          <h3 className="text-36 leading-44p text-dark-gray font-OB capitalize ">
+            {path.pathname?.split("/")[2]}
+            <span className="text-16 text-gray-dark font-OR ml-2 ">
               52 Products
             </span>
           </h3>
@@ -117,10 +119,10 @@ const SideNave = () => {
               </div>
               {/*  */}
               <div>
-                <div className="flex items-start gap-2 mb-2 flex-wrap ">
+                <div className="flex items-start gap-2 mb-2 flex-wrap">
                   {selectedFilters.map((item, index) => (
                     <div key={index} className="px-16p py-8p bg-light ">
-                      {item}{" "}
+                      {item}
                     </div>
                   ))}
                 </div>
@@ -188,4 +190,4 @@ const SideNave = () => {
   );
 };
 
-export default SideNave;
+export default SideNav;

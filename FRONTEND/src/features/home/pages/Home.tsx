@@ -12,7 +12,7 @@ import {
   Virat4,
   Women,
 } from "../../../images";
-import ProductCard from "../../../utils/ProductCard";
+import ProductCard from "../../../utils/HomeProductCard";
 import EveryDayCard from "../components/EveryDayCard";
 import ViratCard from "../components/ViratCard";
 

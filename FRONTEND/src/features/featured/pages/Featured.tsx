@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router";
-import ProductCart from "../components/ProductCart";
-import { Arrow, ArrowDown } from "../../../images";
-import { useState } from "react";
-import SideNave from "../../../utils/sideNave/SideNave";
+import { Arrow } from "../../../images";
+
+import Filter from "../../../utils/filter/Filter";
+import ProductPage from "../../../utils/productPage/ProductPage";
+import SideNav from "../../../utils/sideNav/SideNav";
 
 const filtersData = [
   "Featured",
@@ -17,8 +18,6 @@ const filtersData = [
 ];
 
 const Featured = () => {
-  const [filterData, setFilterData] = useState<string[]>(filtersData);
-
   return (
     <div className="w-full min-h-screen">
       <div className="w-full h-90p" />
@@ -39,37 +38,11 @@ const Featured = () => {
       {/*  */}
       <div className="w-full flex gap-23p relative items-start px-20p ">
         {/* Sticky Sidebar */}
-        <SideNave />
+        <SideNav />
         {/* Products */}
         <div className="  ">
-          <div className="mb-16p flex items-start justify-end px-24p  ">
-            <div className="w-50 aspect-200/56 flex items-center relative ">
-              <select
-                name=""
-                id=""
-                className={`w-full h-full appearance-none  border border-gray-muted rounded-lg px-15p  `}
-              >
-                {filterData.map((item, index) => (
-                  <option key={index}>{item}</option>
-                ))}
-              </select>
-              <img
-                src={ArrowDown}
-                alt=""
-                className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none "
-              />
-            </div>
-          </div>
-          <div className="flex-1 min-w-0 py-23p flex flex-wrap gap-20p items-start justify-center border-t border-gray-muted">
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-          </div>
+          <Filter data={filtersData} />
+          <ProductPage />
         </div>
       </div>
     </div>

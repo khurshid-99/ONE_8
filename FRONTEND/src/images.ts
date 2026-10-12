@@ -23,22 +23,44 @@ import HybridWorkouot from "../src/assets/home/navbar/hybrid_workout.webp";
 
 import Running from "../src/assets/home/navbar/Running.webp";
 import sfvfv from "../src/assets/home/navbar/sfvfv.webp";
-import csdcfdvf from "../src/assets/home/navbar/csdcfdvf.webp";
+import MenRunning from "../src/assets/home/navbar/MenRunning.webp";
 
-import scvfvcsv from "../src/assets/home/navbar/scvfvcsv.webp";
+import Gym from "../src/assets/home/navbar/Gym.webp";
 import Retouched from "../src/assets/home/navbar/Retouched_Image.webp";
 
-import Arrow from "../src/assets/arrow.svg"
-import ArrowDown from "../src/assets/arrow_down.svg"
+import Arrow from "../src/assets/arrow.svg";
+import ArrowDown from "../src/assets/arrow_down.svg";
 
+import ActiveLifestyleWomen1 from "../src/assets/active_style/Active_lifestyle_women-1.webp";
+import ActiveLifestyleCap1 from "../src/assets/active_style/cap.webp";
 
-export {ArrowDown,
+import WomenRunningPant from "../src/assets/women/Running_pant.webp";
+import WomenActiveLifestyle from "../src/assets/active_style/Active_lifestyle_women-1.webp";
+
+import AlW from "../src/assets/women/AL_W.webp";
+
+import MenGym1 from "../src/assets/men/GYM.webp";
+import MenCricket1 from "../src/assets/men/Men_All_Cricket_1.webp";
+import AlMen from '../src/assets/men/AL_MEN.webp'
+import ViratSEam from '../src/assets/men/SEamVirat.webp';
+
+export {
+  ViratSEam,
+  AlMen,
+  MenGym1,
+  MenCricket1,
+  AlW,
+  WomenActiveLifestyle,
+  WomenRunningPant,
+  ActiveLifestyleWomen1,
+  ActiveLifestyleCap1,
+  ArrowDown,
   Arrow,
-  scvfvcsv,
+  Gym,
   Retouched,
   Running,
   sfvfv,
-  csdcfdvf,
+  MenRunning,
   OdeCricket,
   AcctiveLife,
   HybridWorkouot,

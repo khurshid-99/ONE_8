@@ -4,7 +4,7 @@ import "./styles/style.scss";
 
 const ProductCard = () => {
   return (
-    <div className="product_card relative w-111 aspect-444/719 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none ">
+    <div className="product_card relative w-111 aspect-444/719 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none shrink-0">
       <div className="w-full ">
         <img
           src={Shoe1}
@@ -62,7 +62,7 @@ const ProductCard = () => {
             <button className="w-24p aspect-square rounded-full bg-[#6a6abb] "></button>
             <button className="w-24p aspect-square rounded-full bg-[#f71515] "></button>
             <button className="w-24p aspect-square rounded-full bg-[#8f96ff] "></button>
-            <button className="w-24p aspect-square rounded-full bg-[#000000] "></button>
+            <button className="w-24p aspect-square rounded-full bg-black "></button>
           </div>
           <button className="add_to_bag_btn">
             <svg
