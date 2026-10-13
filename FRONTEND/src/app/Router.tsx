@@ -17,6 +17,7 @@ import MenLifestyle from "../features/men/pages/MenLifestyle";
 import MenCricket from "../features/men/pages/MenCricket";
 import MenSeam from "../features/men/pages/MenSeam";
 import MenRunningShoes from "../features/men/pages/MenRunningShoes";
+import AnOdToCricket from "../features/featured/pages/AnOdToCricket";
 
 const AppRouter = createBrowserRouter([
   {
@@ -52,6 +53,7 @@ const AppRouter = createBrowserRouter([
             path: "/collections/hybrid-workout",
             Component: HybridWorkout,
           },
+          // ---------
           {
             path: "/collections/women-all",
             Component: Women,
@@ -68,6 +70,7 @@ const AppRouter = createBrowserRouter([
             path: "/collections/women-lifestyle",
             Component: WomenLifestyle,
           },
+          // -----
           {
             path: "/collections/men-all",
             Component: Men,
@@ -95,6 +98,15 @@ const AppRouter = createBrowserRouter([
           {
             path: "/collections/men-running-shoes",
             Component: MenRunningShoes,
+          },
+        ],
+      },
+      {
+        path: "/pages",
+        children: [
+          {
+            path: "/pages/an-ode-to-cricket",
+            Component: AnOdToCricket,
           },
         ],
       },

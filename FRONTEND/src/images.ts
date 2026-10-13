@@ -41,10 +41,27 @@ import AlW from "../src/assets/women/AL_W.webp";
 
 import MenGym1 from "../src/assets/men/GYM.webp";
 import MenCricket1 from "../src/assets/men/Men_All_Cricket_1.webp";
-import AlMen from '../src/assets/men/AL_MEN.webp'
-import ViratSEam from '../src/assets/men/SEamVirat.webp';
+import AlMen from "../src/assets/men/AL_MEN.webp";
+import ViratSEam from "../src/assets/men/SEamVirat.webp";
+
+import AnOdVideoMobile1 from "../src/assets/videos/an_od_cricket_1.mp4";
+import AnOdVideoDestop1 from "../src/assets/videos/an_od_cricket_1_destop.mp4";
+import BoomLogoIcon from "../src/assets/boom_logo_icon.webp";
+
+import ViratAnOd from "../src/assets/men/virat.webp";
+import RedShoe1 from "../src/assets/men/red_shoe_image.webp";
+
+import AnOdVideoDestop2 from "../src/assets/videos/an_od_cricket_2_destop.mp4";
+import AnOdVideoDestop3 from "../src/assets/videos/an_od_cricket_3_destop.mp4";
 
 export {
+  AnOdVideoDestop1,
+  AnOdVideoDestop2,
+  AnOdVideoDestop3,
+  ViratAnOd,
+  RedShoe1,
+  BoomLogoIcon,
+  AnOdVideoMobile1,
   ViratSEam,
   AlMen,
   MenGym1,
