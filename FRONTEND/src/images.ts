@@ -25,7 +25,7 @@ import Running from "../src/assets/home/navbar/Running.webp";
 import sfvfv from "../src/assets/home/navbar/sfvfv.webp";
 import MenRunning from "../src/assets/home/navbar/MenRunning.webp";
 
-import Gym from '../src/assets/home/navbar/Gym.webp'
+import Gym from '../src/assets/home/navbar/women_gym.webp'
 
 import Retouched from "../src/assets/home/navbar/Retouched_Image.webp";
 
