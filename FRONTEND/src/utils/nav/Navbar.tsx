@@ -618,7 +618,7 @@ export default function Navbar() {
       >
         {/* Desktop navigation */}
 
-        <ul className="top_nav_ul flex items-center gap-32p text-16 font-OM  ">
+        <ul className="top_nav_ul flex items-center gap-32p text-16 font-OM ">
           {topLinks.map((item) => (
             <li
               key={item}
@@ -636,7 +636,7 @@ export default function Navbar() {
 
         {/* Logo */}
 
-        <div>
+        <div className=" ">
           <Link to={""} className="block w-84p h-62p ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -786,12 +786,14 @@ export default function Navbar() {
                     className={`text-24 font-OB mb-16p  duration-500 cursor-pointer ${activeSubMenu === item.title ? "pl-4 text-black" : "pl-0 text-gray-dark hover:text-black"} `}
                   >
                     {item.href ? (
-                      <Link to={item.href}>{item.title}</Link>
+                      <Link to={item.href} onClick={() => setActiveMenu(null)}>
+                        {item.title}
+                      </Link>
                     ) : (
                       <button
                         type="button"
                         onClick={() => setActiveSubMenu(item.title)}
-                        className="w-full flex justify-between items-center "
+                        className="w-full flex justify-between items-center"
                       >
                         <span> {item.title}</span>
                         <Link
@@ -852,7 +854,7 @@ export default function Navbar() {
               <div className="flex justify-between">
                 {/* Menu Items */}
                 {activeSubMenuData?.children && (
-                  <div className="pl-40p py-32p ">
+                  <div className="pl-40p py-32p bg-[pink] ">
                     <h3 className="text-32 text-dark font-OB mb-32p">
                       {activeSubMenuData.children.heading}
                     </h3>
