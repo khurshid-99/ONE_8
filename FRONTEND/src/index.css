@@ -98,6 +98,7 @@
   --spacing-25p: 25px;
   --spacing-23p: 23px;
   --spacing-22p: 22px;
+  --spacing-21p: 21px;
   --spacing-20p: 20px;
   --spacing-18p: 18px;
   --spacing-16p: 16px;
@@ -112,6 +113,7 @@
 
   /* Radius */
   --radius-50: 50px;
+  --radius-8: 8px;
 }
 
 #root {

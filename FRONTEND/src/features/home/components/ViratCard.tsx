@@ -98,7 +98,7 @@ const ViratCard = ({ img , name}: IVirat) => {
         </div>
       </div>
     </div>
-  );
+  );''
 };
 
 export default ViratCard;

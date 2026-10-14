@@ -1,11 +1,23 @@
+import type { CSSProperties } from "react";
+
 interface IVirat {
   img: string;
   name: string;
+  wd?: number;
+  hd?: number;
 }
 
-const EveryDayCard = ({ img, name }: IVirat) => {
+const EveryDayCard = ({ img, name, wd = 386, hd = 463 }: IVirat) => {
+  const style = {
+    "--card-width": `${wd}px`,
+    "--card-ratio": `${wd} / ${hd}`,
+  } as CSSProperties;
+
   return (
-    <div className="virat_card relative w-96.5 aspect-386/463 rounded-lg overflow-hidden ">
+    <div
+      style={style}
+      className={`virat_card relative w-(--card-width) aspect-(--card-ratio) rounded-lg overflow-hidden`}
+    >
       <img
         src={img}
         alt=""
@@ -37,10 +49,7 @@ const EveryDayCard = ({ img, name }: IVirat) => {
         <button className="virat_card_btn relative z-100 bg-white px-32p py-11p rounded-50 text-16 text-black font-OM opacity-0 active:scale-99 ">
           Shop Now
         </button>
-        <div
-          className="virat_card_logo_8 absolute z-88 top-full
-               "
-        >
+        <div className="virat_card_logo_8 absolute z-88 top-full ">
           <svg
             width="88"
             height="410"

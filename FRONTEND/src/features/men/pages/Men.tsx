@@ -34,7 +34,7 @@ const Men = () => {
       </div>
 
       {/*  */}
-      <div className="w-full flex gap-23p relative items-start px-20p ">
+      <div className="w-full flex gap-23p relative items-start px-20p pb-24p ">
         {/* Sticky Sidebar */}
         <SideNav />
         {/* Products */}

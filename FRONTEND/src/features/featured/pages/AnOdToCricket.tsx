@@ -1,10 +1,31 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import ProductCard from "../../../utils/productCard/ProductCard";
 import {
+  AnOdImg1,
+  AnOdImg2,
+  AnOdImg3,
+  AnOdImg4,
+  AnOdImg5,
+  AnOdImg6,
+  AnOdImg7,
+  AnOdImg8,
+  AnOdImg9,
   AnOdVideoDestop1,
   AnOdVideoDestop2,
+  AnOdVideoDestop3,
   BoomLogoIcon,
+  Caps,
+  Clothing,
+  Footwear,
+  Lifestyle,
   RedShoe1,
   ViratAnOd,
 } from "../../../images";
+
+// Swiper
+import "swiper/css";
+import AnOdCard from "../components/AnOdCard";
+import EveryDayCard from "../../../utils/EveryDayCard";
 
 const AnOdToCricket = () => {
   return (
@@ -80,6 +101,114 @@ const AnOdToCricket = () => {
           playsInline
           className="w-full aspect-auto "
         ></video>
+      </section>
+      <section className="w-full  px-16p pb-30p my-80p  ">
+        <Swiper
+          slidesPerView={"auto"}
+          spaceBetween={10}
+          breakpoints={{}}
+          className="mySwiper"
+        >
+          <SwiperSlide className="!w-fit">
+            <AnOdCard image={AnOdImg1} width={375} />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit">
+            <AnOdCard image={AnOdImg2} width={561} />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit">
+            <AnOdCard image={AnOdImg3} width={750} />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit">
+            <AnOdCard image={AnOdImg4} width={935} />
+          </SwiperSlide>
+        </Swiper>
+      </section>
+      <section className="w-full px-16p py-48p mt-24p mb-48p ">
+        <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper ">
+          <SwiperSlide className="!w-fit ">
+            <ProductCard />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit ">
+            <ProductCard />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit ">
+            <ProductCard />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit ">
+            <ProductCard />
+          </SwiperSlide>
+          <SwiperSlide className="!w-fit ">
+            <ProductCard />
+          </SwiperSlide>
+        </Swiper>
+      </section>
+      <section className="w-full px-16p ">
+        <video
+          muted
+          loop
+          autoPlay
+          src={AnOdVideoDestop3}
+          className="w-full aspect-auto object-cover object-center"
+        ></video>
+      </section>
+      <section className="w-full px-16p grid grid-cols-12 gap-8p items-center mt-80p ">
+        <div className="w-full col-span-6 ">
+          <img
+            src={AnOdImg5}
+            alt=""
+            className="w-full aspect-auto rounded-8 "
+          />
+        </div>
+        <div className="w-full col-span-6 flex flex-col justify-center gap-24p ">
+          <img
+            src={AnOdImg6}
+            alt=""
+            className="w-full aspect-auto rounded-8 "
+          />
+          <p className="text-18 text-dark font-OM ">
+            Handed down from one generation to the next. Carrying the legacy of
+            the game forward.
+          </p>
+        </div>
+      </section>
+      <section className="w-full px-16p grid grid-cols-12 gap-8p items-center mt-80p ">
+        <div className="w-full col-span-6 ">
+          <img
+            src={AnOdImg7}
+            alt=""
+            className="w-full aspect-auto rounded-8 "
+          />
+        </div>
+        <div className="w-full col-span-6 pb-48p ">
+          <img
+            src={AnOdImg8}
+            alt=""
+            className="w-full aspect-auto rounded-8 "
+          />
+        </div>
+      </section>
+      <section className="w-full grid grid-cols-[repeat(12, 1fr)] pt-24p pb-16p ">
+        <img
+          src={AnOdImg9}
+          alt=""
+          className="w-full aspect-auto object-cover object-center "
+        />
+      </section>
+      <section className="w-full px-16p py-80p  ">
+        <div className="pb-40p text-center ">
+          <h3 className="text-24 text-dark font-OB ">Elevate Your Everyday</h3>
+        </div>
+        <div className="flex items-center justify-center gap-8p pb-30p ">
+          <EveryDayCard img={Footwear} name="Footwear" wd={462} hd={555} />
+          <EveryDayCard img={Clothing} name="Clothing" wd={462} hd={555} />
+          <EveryDayCard img={Caps} name="Caps" wd={462} hd={555} />
+          <EveryDayCard
+            img={Lifestyle}
+            name="Active Lifestyle"
+            wd={462}
+            hd={555}
+          />
+        </div>
       </section>
     </main>
   );

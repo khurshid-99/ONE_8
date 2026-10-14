@@ -3,7 +3,7 @@ import { Shoe1, Shoe2 } from "../../images";
 
 const productCard = () => {
   return (
-    <div className="product_card relative w-116 aspect-464/744 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none ">
+    <div className="product_card relative w-116.25 aspect-465/745 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none ">
       <div className="w-full ">
         <img
           src={Shoe1}

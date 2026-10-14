@@ -13,7 +13,7 @@ import {
   Women,
 } from "../../../images";
 import ProductCard from "../../../utils/HomeProductCard";
-import EveryDayCard from "../components/EveryDayCard";
+import EveryDayCard from "../../../utils/EveryDayCard";
 import ViratCard from "../components/ViratCard";
 
 import "../style/Virat.scss";

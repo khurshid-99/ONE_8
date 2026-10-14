@@ -25,7 +25,7 @@ import Running from "../src/assets/home/navbar/Running.webp";
 import sfvfv from "../src/assets/home/navbar/sfvfv.webp";
 import MenRunning from "../src/assets/home/navbar/MenRunning.webp";
 
-import Gym from '../src/assets/home/navbar/women_gym.webp'
+import Gym from "../src/assets/home/navbar/women_gym.webp";
 
 import Retouched from "../src/assets/home/navbar/Retouched_Image.webp";
 
@@ -55,7 +55,26 @@ import RedShoe1 from "../src/assets/men/red_shoe_image.webp";
 import AnOdVideoDestop2 from "../src/assets/videos/an_od_cricket_2_destop.mp4";
 import AnOdVideoDestop3 from "../src/assets/videos/an_od_cricket_3_destop.mp4";
 
+import AnOdImg1 from "../src/assets/anOdCricket/an_od_img1.webp";
+import AnOdImg2 from "../src/assets/anOdCricket/an_od_img2.webp";
+import AnOdImg3 from "../src/assets/anOdCricket/an_od_img3.webp";
+import AnOdImg4 from "../src/assets/anOdCricket/an_od_img4.webp";
+import AnOdImg5 from "../src/assets/anOdCricket/an_od_img5.webp";
+import AnOdImg6 from "../src/assets/anOdCricket/an_od_img6.webp";
+import AnOdImg7 from "../src/assets/anOdCricket/an_od_img7.webp";
+import AnOdImg8 from "../src/assets/anOdCricket/an_od_img8.webp";
+import AnOdImg9 from "../src/assets/anOdCricket/an_od_img9_Artboard.webp";
+
 export {
+  AnOdImg5,
+  AnOdImg6,
+  AnOdImg7,
+  AnOdImg8,
+  AnOdImg9,
+  AnOdImg1,
+  AnOdImg2,
+  AnOdImg3,
+  AnOdImg4,
   AnOdVideoDestop1,
   AnOdVideoDestop2,
   AnOdVideoDestop3,
