@@ -21,6 +21,7 @@ import "../style/Home.scss";
 import { Link } from "react-router";
 import Navbar from "../../../utils/nav/Navbar";
 import Footer from "../../../utils/footer/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Home = () => {
   return (
@@ -53,11 +54,24 @@ const Home = () => {
             <strong>Featured</strong>
           </h3>
         </div>
-        <div className="flex gap-1 px-4 w-full pb-30p ">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <div className="w-full px-16p  pb-30p ">
+          <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper">
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 
@@ -84,11 +98,24 @@ const Home = () => {
             <strong>Cricket Collection</strong>
           </h3>
         </div>
-        <div className="flex gap-1 px-4 w-full pb-30p ">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <div className="w-full px-16p pb-30p ">
+          <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper">
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ProductCard />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 

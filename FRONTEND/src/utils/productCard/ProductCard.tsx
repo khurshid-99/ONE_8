@@ -1,7 +1,15 @@
 import { Link } from "react-router";
 import { Shoe1, Shoe2 } from "../../images";
+import { useState, type CSSProperties } from "react";
 
 const productCard = () => {
+  const [wish, setWish] = useState(false);
+
+  const style = {
+    fill: `${wish ? "#ff0000" : "#ffffff00"}`,
+    stroke: `${wish ? "#ff0000" : "#000000"}`,
+  } as CSSProperties;
+
   return (
     <div className="product_card relative w-116.25 aspect-465/745 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none ">
       <div className="w-full ">
@@ -26,20 +34,23 @@ const productCard = () => {
         <span className="text-12 text-black font-RM7 uppercase ">Live Now</span>
       </div>
       {/*  */}
-      <button className="absolute top-6 right-6 ">
+      <button
+        onClick={() => setWish(!wish)}
+        className="absolute top-6 right-6 "
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          fill="none"
+          fill={style.fill}
           aria-hidden="true"
         >
           <path
             d="M19.6706 5.4736C17.6806 3.8336 14.7206 4.1236 12.8906 5.9536L12.0006 6.8436L11.1106 5.9536C9.29063 4.1336 6.32064 3.8336 4.33064 5.4736C2.05064 7.3536 1.93063 10.7436 3.97063 12.7836L11.6406 20.4536C11.8406 20.6536 12.1506 20.6536 12.3506 20.4536L20.0206 12.7836C22.0706 10.7436 21.9506 7.3636 19.6706 5.4736Z"
-            stroke="currentColor"
+            stroke={style.stroke}
             strokeWidth="1.5"
-            fill="none"
+            fill={style.fill}
             strokeLinecap="round"
             strokeLinejoin="round"
           ></path>

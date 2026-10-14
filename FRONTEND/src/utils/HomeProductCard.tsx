@@ -1,11 +1,19 @@
 import { Link } from "react-router";
 import { Shoe1, Shoe2 } from "../images";
 import "./styles/style.scss";
+import { useState } from "react";
 
 const ProductCard = () => {
+  const [wish, setWish] = useState(false);
+
+  const style = {
+    fill: `${wish ? "#ff0000" : "#ffffff00"}`,
+    stock: `${wish ? "#ff0000" : "#000000"}`
+  };
+
   return (
     <div className="product_card relative w-111 aspect-444/719 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none shrink-0">
-      <div className="w-full ">
+      <div className="w-full  ">
         <img
           src={Shoe1}
           alt=""
@@ -19,7 +27,7 @@ const ProductCard = () => {
       </div>
 
       {/*  */}
-      <div className="absolute top-6 left-6  w-24.5 aspect-98/32 bg-gray-light rounded-50 px-12p py-6p flex items-center justify-between select-none ">
+      <div className="absolute top-6 left-6 w-24.5 aspect-98/32 bg-gray-light rounded-50 px-12p py-6p flex items-center justify-between select-none ">
         <div className="relative flex items-center justify-center ">
           <span className="w-8p aspect-square inline-block bg-black rounded-full "></span>
           <span className="absolute animate-ping opacity-75 w-8p aspect-square inline-block bg-black rounded-full "></span>
@@ -27,20 +35,23 @@ const ProductCard = () => {
         <span className="text-12 text-black font-RM7 uppercase ">Live Now</span>
       </div>
       {/*  */}
-      <button className="absolute top-6 right-6 ">
+      <button
+        onClick={() => setWish(!wish)}
+        className="absolute top-6 right-6  "
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          fill="none"
+          fill={style.fill}
           aria-hidden="true"
         >
           <path
             d="M19.6706 5.4736C17.6806 3.8336 14.7206 4.1236 12.8906 5.9536L12.0006 6.8436L11.1106 5.9536C9.29063 4.1336 6.32064 3.8336 4.33064 5.4736C2.05064 7.3536 1.93063 10.7436 3.97063 12.7836L11.6406 20.4536C11.8406 20.6536 12.1506 20.6536 12.3506 20.4536L20.0206 12.7836C22.0706 10.7436 21.9506 7.3636 19.6706 5.4736Z"
-            stroke="currentColor"
+            stroke={style.stock}
             strokeWidth="1.5"
-            fill="none"
+            fill={style.fill}
             strokeLinecap="round"
             strokeLinejoin="round"
           ></path>
@@ -58,13 +69,13 @@ const ProductCard = () => {
         </p>
         <div className="flex items-center justify-between ">
           <div className="flex items-center gap-2 ">
-            <button className="w-24p aspect-square rounded-full bg-[#BBBBBF] "></button>
-            <button className="w-24p aspect-square rounded-full bg-[#6a6abb] "></button>
-            <button className="w-24p aspect-square rounded-full bg-[#f71515] "></button>
-            <button className="w-24p aspect-square rounded-full bg-[#8f96ff] "></button>
+            <button className="w-24p aspect-square rounded-full bg-[#BBBBBF] cursor-pointer  "></button>
+            <button className="w-24p aspect-square rounded-full bg-[#6a6abb] cursor-pointer  "></button>
+            <button className="w-24p aspect-square rounded-full bg-[#f71515] cursor-pointer  "></button>
+            <button className="w-24p aspect-square rounded-full bg-[#8f96ff] cursor-pointer  "></button>
             <button className="w-24p aspect-square rounded-full bg-black "></button>
           </div>
-          <button className="add_to_bag_btn">
+          <button className="add_to_bag_btn cursor-pointer ">
             <svg
               width="16"
               height="18"
