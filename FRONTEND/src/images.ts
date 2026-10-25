@@ -65,26 +65,26 @@ import AnOdImg7 from "../src/assets/anOdCricket/an_od_img7.webp";
 import AnOdImg8 from "../src/assets/anOdCricket/an_od_img8.webp";
 import AnOdImg9 from "../src/assets/anOdCricket/an_od_img9_Artboard.webp";
 
-import act1 from "../src/assets/active_style/act_img1.webp";
-import act2 from "../src/assets/active_style/act_img2.webp";
-import act3 from "../src/assets/active_style/act_img3.webp";
-import act4 from "../src/assets/active_style/act_img4.webp";
-import act5 from "../src/assets/active_style/act_img5.webp";
-import act6 from "../src/assets/active_style/act_img6.webp";
-import act7 from "../src/assets/active_style/act_img7.webp";
-import actBanner1 from "../src/assets/active_style/act_banner1.webp";
-import actBanner2 from "../src/assets/active_style/act_banner2.webp";
+import Act1 from "../src/assets/active_style/act_img1.webp";
+import Act2 from "../src/assets/active_style/act_img2.webp";
+import Act3 from "../src/assets/active_style/act_img3.webp";
+import Act4 from "../src/assets/active_style/act_img4.webp";
+import Act5 from "../src/assets/active_style/act_img5.webp";
+import Act6 from "../src/assets/active_style/act_img6.webp";
+import Act7 from "../src/assets/active_style/act_img7.webp";
+import ActBanner1 from "../src/assets/active_style/act_banner1.webp";
+import ActBanner2 from "../src/assets/active_style/act_banner2.webp";
 
 export {
-  act1,
-  act2,
-  act3,
-  act4,
-  act5,
-  act6,
-  act7,
-  actBanner1,
-  actBanner2,
+  Act1,
+  Act2,
+  Act3,
+  Act4,
+  Act5,
+  Act6,
+  Act7,
+  ActBanner1,
+  ActBanner2,
   AnOdImg5,
   AnOdImg6,
   AnOdImg7,

@@ -27,7 +27,7 @@ import "swiper/css";
 import AnOdCard from "../components/AnOdCard";
 import EveryDayCard from "../../../utils/EveryDayCard";
 
-const AnOdToCricket = () => {
+const AnOdToCricketPage = () => {
   return (
     <main className="w-full  ">
       <div className=" w-full h-90p" />
@@ -214,4 +214,4 @@ const AnOdToCricket = () => {
   );
 };
 
-export default AnOdToCricket;
+export default AnOdToCricketPage;

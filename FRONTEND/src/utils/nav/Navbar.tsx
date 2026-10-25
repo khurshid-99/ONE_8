@@ -15,6 +15,7 @@ import {
   sfvfv,
   MenRunning,
 } from "../../images";
+import Bag from "./components/Bag";
 
 type MenuLink = {
   title: string;
@@ -419,6 +420,8 @@ export default function Navbar() {
 
   const menuRef = useRef<HTMLDivElement | null>(null);
 
+  const [isBagActive, setIsBagActive] = useState<boolean>(false);
+
   /**
    * ------------------------
    * Scroll to Close Mega Menu
@@ -610,15 +613,53 @@ export default function Navbar() {
     (item) => item.title === activeSubMenu,
   );
 
+  //
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+
+    // Save current styles
+    const previousHtmlOverflow = html.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+    const previousBodyPosition = body.style.position;
+    const previousBodyTop = body.style.top;
+    const previousBodyWidth = body.style.width;
+
+    if (isBagActive) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+
+      // Lock background scrolling
+      html.style.overflow = "hidden";
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.style.top = `-${scrollY}px`;
+      body.style.width = "100%";
+    }
+
+    return () => {
+      // Restore original styles
+      html.style.overflow = previousHtmlOverflow;
+      body.style.overflow = previousBodyOverflow;
+      body.style.position = previousBodyPosition;
+      body.style.top = previousBodyTop;
+      body.style.width = previousBodyWidth;
+
+      // Restore previous scroll position
+      window.scrollTo(0, scrollY);
+    };
+  }, [isBagActive]);
+
   return (
     <>
       <nav
         ref={navbarRef}
-        className={`top_navbar absolute z-999 w-full h-90p flex items-center justify-between px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}`}
+        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}`}
       >
         {/* Desktop navigation */}
 
-        <ul className="top_nav_ul flex items-center gap-32p text-16 font-OM ">
+        <ul className="top_nav_ul flex items-center justify-start gap-32p text-16 font-OM ">
           {topLinks.map((item) => (
             <li
               key={item}
@@ -636,7 +677,7 @@ export default function Navbar() {
 
         {/* Logo */}
 
-        <div className=" ">
+        <div className="flex justify-center ">
           <Link to={""} className="block w-84p h-62p ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -652,7 +693,7 @@ export default function Navbar() {
         </div>
 
         {/* Search */}
-        <div className="flex items-center gap-16p ">
+        <div className="flex items-center justify-end gap-16p  ">
           <form action="" className="px-16p ">
             <div className="navbar_search_container relative px-16p py-8p border  rounded-sm flex items-center justify-center gap-12p ">
               <button aria-label="Search for products">
@@ -683,6 +724,7 @@ export default function Navbar() {
               </button>
               <input
                 type="search"
+                name="nav-search"
                 placeholder={`Search for ${text}`}
                 className={`outline-none text-16p font-OM  `}
               />
@@ -740,7 +782,7 @@ export default function Navbar() {
                 </svg>
               </Link>
             </div>
-            <div>
+            <div onClick={() => setIsBagActive(!isBagActive)}>
               <Link to={""}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1091,6 +1133,14 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* BAG */}
+      {isBagActive ? (
+        <Bag isBagActive={isBagActive} setIsBagActive={setIsBagActive} />
+      ) : (
+        ""
+      )}
+      {/* */}
     </>
   );
 }

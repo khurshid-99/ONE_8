@@ -2,8 +2,8 @@ import { Link } from "react-router";
 import { Shoe1, Shoe2 } from "../../images";
 import { useState, type CSSProperties } from "react";
 
-const productCard = () => {
-  const [wish, setWish] = useState(false);
+const ProductCard = () => {
+  const [wish, setWish] = useState<boolean | null>(false);
 
   const style = {
     fill: `${wish ? "#ff0000" : "#ffffff00"}`,
@@ -96,4 +96,4 @@ const productCard = () => {
   );
 };
 
-export default productCard;
+export default ProductCard;

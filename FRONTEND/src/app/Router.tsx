@@ -17,7 +17,8 @@ import MenLifestyle from "../features/men/pages/MenLifestyle";
 import MenCricket from "../features/men/pages/MenCricket";
 import MenSeam from "../features/men/pages/MenSeam";
 import MenRunningShoes from "../features/men/pages/MenRunningShoes";
-import AnOdToCricket from "../features/featured/pages/AnOdToCricket";
+import AnOdToCricketPage from "../features/featured/pages/AnOdToCricket.Page";
+import ActiveLifestylePage from "../features/featured/pages/ActiveLifestyle.Page";
 
 const AppRouter = createBrowserRouter([
   {
@@ -106,7 +107,11 @@ const AppRouter = createBrowserRouter([
         children: [
           {
             path: "/pages/an-ode-to-cricket",
-            Component: AnOdToCricket,
+            Component: AnOdToCricketPage,
+          },
+          {
+            path: "/pages/active-lifestyle",
+            Component: ActiveLifestylePage,
           },
         ],
       },

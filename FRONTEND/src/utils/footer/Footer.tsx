@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex items-center justify-between gap-[32px] pt-70p pb-24p  ">
           <input
             type="email"
-            name=""
+            name="email-join-the-newsletter"
             id=""
             placeholder="Enter your email address"
             className="w-308.5 h-[80px] text-60 text-white font-OB border-b border-gray-medium outline-none placeholder:text-60 placeholder:font-OB  "
