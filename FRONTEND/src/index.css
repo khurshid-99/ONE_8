@@ -51,6 +51,7 @@
   --font-RM7: "RM7", monospace;
 
   /* Font Sizes */
+
   --text-60: 3.75rem; /* 60px */
   --text-48: 3rem; /* 48px */
   --text-36: 2.25rem; /* 36px */
@@ -89,6 +90,7 @@
   --spacing-80p: 80px;
   --spacing-84p: 84px;
   --spacing-70p: 70px;
+  --spacing-65p: 4.0625rem; /* 65px */
   --spacing-62p: 62px;
   --spacing-60p: 60px;
   --spacing-48p: 48px;

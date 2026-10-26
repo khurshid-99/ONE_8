@@ -16,6 +16,8 @@ import {
   MenRunning,
 } from "../../images";
 import Bag from "./components/Bag";
+import MobileMenu from "./components/MobileMenu";
+import type { ToggleRef } from "../toggleComponents/Toggle";
 
 type MenuLink = {
   title: string;
@@ -651,15 +653,113 @@ export default function Navbar() {
     };
   }, [isBagActive]);
 
+  const [isMenuActive, setIsMenuActive] = useState(false);
+  const mobileMenuRef = useRef<ToggleRef>(null);
   return (
     <>
       <nav
         ref={navbarRef}
-        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}`}
+        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}`}
       >
-        {/* Desktop navigation */}
+        {/* Mobile navigation */}
+        <div className="flex items-center gap-16p xl:hidden ">
+          <div>
+            {!isMenuActive ? (
+              <button onClick={() => setIsMenuActive(true)} className="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  className="pointer-events-none "
+                >
+                  <path
+                    d="M6.66699 9.33334H25.3337"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M6.66699 16H25.3337"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M6.66699 22.6667H25.3337"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            ) : (
+              <button onClick={() => mobileMenuRef.current?.close()}>
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                >
+                  <path
+                    d="M6.66406 6.66666L25.3307 25.3333"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M25.3359 6.66666L6.66927 25.3333"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            )}
+          </div>
 
-        <ul className="top_nav_ul flex items-center justify-start gap-32p text-16 font-OM ">
+          <button className="w-32p aspect-square ">
+            <svg
+              className="icon-search w-32p aspect-square"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="10"
+                cy="10"
+                r="6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></circle>
+              <path
+                d="M14.5 14.5L19 19"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <MobileMenu
+          isActive={isMenuActive}
+          setIsActive={setIsMenuActive}
+          ref={mobileMenuRef}
+        />
+
+        {/* Desktop navigation */}
+        <ul className="top_nav_ul hidden xl:flex items-center justify-start gap-32p text-16 font-OM ">
           {topLinks.map((item) => (
             <li
               key={item}
@@ -676,9 +776,8 @@ export default function Navbar() {
         </ul>
 
         {/* Logo */}
-
         <div className="flex justify-center ">
-          <Link to={""} className="block w-84p h-62p ">
+          <Link to={""} className="block w-65p h-48p xl:w-84p xl:h-62p ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 100 120.83"
@@ -694,7 +793,7 @@ export default function Navbar() {
 
         {/* Search */}
         <div className="flex items-center justify-end gap-16p  ">
-          <form action="" className="px-16p ">
+          <form action="" className="px-16p hidden xl:inline-block ">
             <div className="navbar_search_container relative px-16p py-8p border  rounded-sm flex items-center justify-center gap-12p ">
               <button aria-label="Search for products">
                 <svg
@@ -734,7 +833,7 @@ export default function Navbar() {
           </form>
           {/*  */}
           <div className="flex items-center gap-16p hover:text-black ">
-            <div>
+            <div className="hidden xl:inline-block ">
               <Link to={""} className="flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -756,6 +855,7 @@ export default function Navbar() {
                 </svg>
               </Link>
             </div>
+            {/*  */}
             <div>
               <Link to={""}>
                 <svg
@@ -782,6 +882,7 @@ export default function Navbar() {
                 </svg>
               </Link>
             </div>
+            {/*  */}
             <div onClick={() => setIsBagActive(!isBagActive)}>
               <Link to={""}>
                 <svg
