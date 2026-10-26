@@ -1,4 +1,3 @@
-// -------------------
 
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
@@ -372,25 +371,6 @@ const navData: Record<string, MegaMenuData> = {
   },
 };
 
-const accountLinks = [
-  {
-    title: "My account",
-    href: "/account",
-  },
-  {
-    title: "Wishlist",
-    href: "/wishlist",
-  },
-  {
-    title: "Contact us",
-    href: "/pages/contact-us",
-  },
-  {
-    title: "Return & Exchange Portal",
-    href: "/pages/return-exchange",
-  },
-];
-
 const topLinks = ["Featured", "Women", "Men", "Kids"];
 
 export default function Navbar() {
@@ -402,20 +382,7 @@ export default function Navbar() {
 
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const [accountOpen, setAccountOpen] = useState(false);
-
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const [mobileLevel, setMobileLevel] = useState<"main" | "category" | "sub">(
-    "main",
-  );
-
-  const [mobileCategory, setMobileCategory] = useState<string | null>(null);
-
-  const [mobileSubCategory, setMobileSubCategory] = useState<string | null>(
-    null,
-  );
-
+ 
   const [text, setText] = useState("");
 
   const navbarRef = useRef<HTMLElement | null>(null);
@@ -536,7 +503,6 @@ export default function Navbar() {
       if (menuRef.current && !menuRef.current.contains(target)) {
         setActiveMenu(null);
         setSearchOpen(false);
-        setAccountOpen(false);
       }
     };
 
@@ -560,55 +526,8 @@ export default function Navbar() {
 
     setSearchOpen(false);
 
-    setAccountOpen(false);
   };
-
-  /*
-   * ------------------------------------
-   * Mobile
-   * ------------------------------------
-   */
-
-  const openMobileCategory = (category: string) => {
-    setMobileCategory(category);
-
-    setMobileLevel("category");
-  };
-
-  const openMobileSubCategory = (category: string) => {
-    setMobileSubCategory(category);
-
-    setMobileLevel("sub");
-  };
-
-  const closeMobileMenu = () => {
-    setMobileOpen(false);
-
-    setMobileLevel("main");
-
-    setMobileCategory(null);
-
-    setMobileSubCategory(null);
-  };
-
-  const mobileBack = () => {
-    if (mobileLevel === "sub") {
-      setMobileLevel("category");
-      setMobileSubCategory(null);
-
-      return;
-    }
-
-    if (mobileLevel === "category") {
-      setMobileLevel("main");
-      setMobileCategory(null);
-
-      return;
-    }
-
-    closeMobileMenu();
-  };
-
+  
   const activeData = activeMenu ? navData[activeMenu] : null;
 
   const activeSubMenuData = activeData?.menu.find(
@@ -1086,154 +1005,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Mobile Menu */}
 
-      {mobileOpen && (
-        <div className="mobile_nav_overlay">
-          <div className="mobile_nav">
-            <div className="mobile_nav_header">
-              {mobileLevel !== "main" ? (
-                <button
-                  type="button"
-                  onClick={mobileBack}
-                  className="mobile_back_btn"
-                >
-                  ← Back
-                </button>
-              ) : (
-                <span className="mobile_nav_logo">one8</span>
-              )}
-
-              <button
-                type="button"
-                className="mobile_close_btn"
-                onClick={closeMobileMenu}
-              >
-                ×
-              </button>
-            </div>
-
-            {/* Main */}
-
-            {mobileLevel === "main" && (
-              <div className="mobile_menu_content">
-                {topLinks.map((item) => (
-                  <button
-                    key={item}
-                    type="button"
-                    className="mobile_menu_item"
-                    onClick={() => openMobileCategory(item)}
-                  >
-                    <span>{item}</span>
-
-                    <span>→</span>
-                  </button>
-                ))}
-
-                <div className="mobile_menu_divider" />
-
-                {accountLinks.map((item) => (
-                  <Link
-                    key={item.title}
-                    to={item.href}
-                    className="mobile_menu_item"
-                    onClick={closeMobileMenu}
-                  >
-                    <span>{item.title}</span>
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            {/* Category */}
-
-            {mobileLevel === "category" &&
-              mobileCategory &&
-              navData[mobileCategory] && (
-                <div className="mobile_menu_content">
-                  <Link
-                    to={navData[mobileCategory].href}
-                    className="mobile_menu_all"
-                    onClick={closeMobileMenu}
-                  >
-                    View All {mobileCategory}
-                  </Link>
-
-                  {navData[mobileCategory].menu.map((item) => (
-                    <div key={item.title}>
-                      {item.children ? (
-                        <button
-                          type="button"
-                          className="mobile_menu_item"
-                          onClick={() => openMobileSubCategory(item.title)}
-                        >
-                          <span>{item.title}</span>
-
-                          <span>→</span>
-                        </button>
-                      ) : (
-                        <Link
-                          to={item.href || "#"}
-                          className="mobile_menu_item"
-                          onClick={closeMobileMenu}
-                        >
-                          <span>{item.title}</span>
-                        </Link>
-                      )}
-                    </div>
-                  ))}
-
-                  {navData[mobileCategory].images.length > 0 && (
-                    <div className="mobile_menu_images">
-                      {navData[mobileCategory].images.map((item) => (
-                        <Link
-                          key={item.title}
-                          to={item.href}
-                          onClick={closeMobileMenu}
-                        >
-                          <img src={item.image} alt={item.title} />
-
-                          <span>{item.title}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
-
-            {/* Sub category */}
-
-            {mobileLevel === "sub" && mobileCategory && mobileSubCategory && (
-              <div className="mobile_menu_content">
-                {navData[mobileCategory].menu
-                  .filter((item) => item.title === mobileSubCategory)
-                  .map((item) => (
-                    <div key={item.title}>
-                      <h3 className="mobile_sub_title">{item.title}</h3>
-
-                      {item.children?.heading && (
-                        <p className="mobile_sub_heading">
-                          {item.children.heading}
-                        </p>
-                      )}
-
-                      {/* {item.children?.items.map((child) => (
-                        <Link
-                          key={child.title}
-                          to={child.href}
-                          className="mobile_menu_item"
-                          onClick={closeMobileMenu}
-                        >
-                          {child.title}
-                        </Link>
-                      ))} */}
-                    </div>
-                  ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
 
       {/* BAG */}
       {isBagActive ? (
