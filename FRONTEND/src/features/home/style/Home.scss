@@ -19,13 +19,24 @@
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1280px) {
     &:hover {
       .men_img_wrapper {
         width: 928px;
 
         .men_img {
           width: 906px;
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    &:hover {
+      .men_img_wrapper {
+        width: 460px;
+
+        .men_img {
+          width: 460px;
         }
       }
     }

@@ -18,7 +18,6 @@ import ViratCard from "../components/ViratCard";
 
 import "../style/Virat.scss";
 import "../style/Home.scss";
-import { Link } from "react-router";
 import Navbar from "../../../utils/nav/Navbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -45,11 +44,11 @@ const Home = () => {
         modules={[Pagination, Autoplay]}
       >
         <SwiperSlide className="">
-          <header className="w-full h-screen relative ">
+          <header className="w-full lg:aspect-1024/500 relative ">
             <img
               src={HeroImg}
               alt=""
-              className="w-full h-screen object-cover object-center "
+              className="w-full lg:aspect-1024/500 object-cover object-center "
             />
             <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
               <h3 className="text-24">
@@ -65,11 +64,11 @@ const Home = () => {
           </header>
         </SwiperSlide>
         <SwiperSlide className="">
-          <header className="w-full h-screen relative ">
+          <header className="w-full lg:aspect-1024/500 relative ">
             <img
               src={HeroImg}
               alt=""
-              className="w-full h-screen object-cover object-center "
+              className="w-full lg:aspect-1024/500 object-cover object-center "
             />
             <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
               <h3 className="text-24">
@@ -210,21 +209,21 @@ const Home = () => {
       </section>
 
       {/* Menswear & Womenswear  */}
-      <section className="w-full lg:h-[1077px] flex flex-col lg:flex-row items-center justify-cente gap-16p p-4 my-80p ">
-        <div className="men_50 w-full lg:w-1/2 bg-white">
-          <div className="w-full lg:w-[928px] lg:h-[1077px] flex flex-col justify-end ">
-            <div className="men_img_wrapper relative w-full lg:w-[742px] aspect-square flex items-end justify-start">
-              <span className="absolute -top-5 lg:top-0 right-0 lg:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
+      <section className="w-full lg:h-[635px] 2xl:h-[1077px] grid grid-cols-12 gap-16p p-4 my-80p ">
+        <div className="men_50 w-full col-span-12 lg:col-span-6 bg-white">
+          <div className="w-full lg:w-[76%] 2xl:w-[928px] lg:h-[635px] 2xl:h-[1077px] flex flex-col justify-end ">
+            <div className="men_img_wrapper relative w-full 2xl:w-[742px] aspect-square flex items-end justify-start">
+              <span className="absolute -top-5 2xl:top-0 right-0 lg:right-8p 2xl:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
                 00. // Mens wear
               </span>
 
               <img
                 src={Men}
                 alt=""
-                className="men_img lg:w-[725px] aspect-square object-center object-cover"
+                className="men_img lg:w-full 2xl:w-[725px] aspect-square object-center object-cover"
               />
 
-              <div className="men_side_text absolute lg:top-[22px] -bottom-5 right-0 lg:left-full lg:rotate-90 lg:origin-top-left lg:w-[907px] flex flex-row ">
+              <div className="men_side_text absolute 2xl:top-[22px] -bottom-5 lg:bottom-[95%] right-0 lg:left-[105%] 2xl:left-full lg:rotate-90 lg:origin-top-left lg:w-[95%] 2xl:w-[907px] flex flex-row">
                 <span className="text-10 text-dark-gray font-RM5 uppercase text-center">
                   Engineered for comfort
                 </span>
@@ -245,20 +244,20 @@ const Home = () => {
 
         {/*  */}
 
-        <div className="men_50 w-full lg:w-1/2 bg-white">
-          <div className="lg:w-[928px] lg:h-[1077px] flex flex-col justify-end ">
-            <div className="men_img_wrapper relative lg:w-[742px] aspect-square flex items-end justify-start ">
-              <span className="absolute -top-5 lg:top-0 right-0 lg:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
+        <div className="men_50 w-full col-span-12 lg:col-span-6 bg-white">
+          <div className=" lg:w-[76%] 2xl:w-[928px] lg:h-[635px] 2xl:h-[1077px] flex flex-col justify-end ">
+            <div className="men_img_wrapper relative w-full 2xl:w-[742px] aspect-square flex items-end justify-start ">
+              <span className="absolute -top-5 2xl:top-0 right-0 lg:right-8p 2lx:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
                 00. // Womens wear
               </span>
 
               <img
                 src={Women}
                 alt=""
-                className="men_img lg:w-[725px] aspect-square object-center object-cover"
+                className="men_img lg:w-full 2xl:w-[725px] aspect-square object-center object-cover"
               />
 
-              <div className="men_side_text absolute lg:top-[22px] lg:left-full right-0 -bottom-5 lg:rotate-90 origin-top-left lg:w-[907px] flex flex-row ">
+              <div className="men_side_text absolute 2xl:top-[22px] -bottom-5 lg:bottom-[95%] right-0 lg:left-[105%] 2xl:left-full lg:rotate-90 lg:origin-top-left lg:w-[95%] 2xl:w-[907px] flex flex-row">
                 <span className="text-10 text-dark-gray font-RM5 uppercase text-center">
                   Engineered for comfort
                 </span>
