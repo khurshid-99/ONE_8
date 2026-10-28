@@ -1,18 +1,18 @@
 interface IVirat {
   img: string;
-  name:string
+  name: string;
 }
 
-const ViratCard = ({ img , name}: IVirat) => {
+const ViratCard = ({ img, name }: IVirat) => {
   return (
-    <div className="virat_card relative w-96.5 aspect-386/463 rounded-lg overflow-hidden ">
+    <div className="virat_card relative w-260p lg:w-96.5 aspect-260/420 lg:aspect-386/463 rounded-lg overflow-hidden shrink-0 ">
       <img
         src={img}
         alt=""
-        className="w-full aspect-386/463 object-cover object-center "
+        className="w-full aspect-260/420 lg:aspect-386/463 object-cover object-center "
       />
       {/*  */}
-      <button className="absolute top-2 right-1 ">
+      <button className="absolute top-2 right-1  ">
         <svg
           width="24"
           height="24"
@@ -32,17 +32,14 @@ const ViratCard = ({ img , name}: IVirat) => {
       </button>
       {/*  */}
 
-      <div className="absolute top-0 left-0 w-full h-full z-99  flex flex-col items-center justify-end p-32p ">
-        <h5 className="text-18 text-white font-OB pb-10p ">
-         {name}
+      <div className="absolute top-0 left-0 w-full h-full z-99 flex flex-col items-center justify-end p-32p ">
+        <h5 className="text-18 text-white text-center font-OB pb-10p ">
+          {name}
         </h5>
-        <button className="virat_card_btn relative z-100 bg-white px-32p py-11p rounded-50 text-16 text-black font-OM opacity-0 active:scale-99 ">
+        <button className="virat_card_btn relative z-100 bg-white px-32p py-11p rounded-50 text-16 text-black font-OM lg:opacity-0 active:scale-99 ">
           Shop Now
         </button>
-        <div
-          className="virat_card_logo_8 absolute z-88 top-full
-               "
-        >
+        <div className="virat_card_logo_8 absolute z-88 top-full ">
           <svg
             width="88"
             height="410"
@@ -98,7 +95,7 @@ const ViratCard = ({ img , name}: IVirat) => {
         </div>
       </div>
     </div>
-  );''
+  );
 };
 
 export default ViratCard;

@@ -5,9 +5,17 @@
 
     transition: top 0.3s ease;
   }
-  .virat_card_btn {
-    transition: opacity 0.3s ease;
+
+  // .virat_card_btn {
+  //   opacity: 1;
+  // }
+
+  @media (min-width: 1024px) {
+    .virat_card_btn {
+      transition: opacity 0.3s ease;
+    }
   }
+
   &:hover {
     .virat_card_logo_8 {
       top: 9.5rem;

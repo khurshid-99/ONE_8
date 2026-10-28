@@ -20,32 +20,71 @@ import "../style/Virat.scss";
 import "../style/Home.scss";
 import { Link } from "react-router";
 import Navbar from "../../../utils/nav/Navbar";
-import Footer from "../../../utils/footer/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Home = () => {
   return (
     <main className="w-full relative scrollbar-none xl:scrollbar-auto ">
       <Navbar />
 
-      <header className="w-full h-screen relative ">
-        <img
-          src={HeroImg}
-          alt=""
-          className="w-full h-screen object-cover object-center "
-        />
-        <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
-          <h3 className="text-24">
-            <strong>Seam XVIII Signature</strong>
-          </h3>
-          <p className="text-16p pb-11p ">
-            Born in cricket, stitched in culture | Live Now
-          </p>
-          <button className="text-16 text-black bg-white rounded-50 px-32p py-11p ">
-            Shop Now
-          </button>
-        </div>
-      </header>
+      <Swiper
+        slidesPerView={"auto"}
+        pagination={true}
+        loop={true}
+        className="mySwiper"
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        speed={2000}
+        modules={[Pagination, Autoplay]}
+      >
+        <SwiperSlide className="">
+          <header className="w-full h-screen relative ">
+            <img
+              src={HeroImg}
+              alt=""
+              className="w-full h-screen object-cover object-center "
+            />
+            <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
+              <h3 className="text-24">
+                <strong>Seam XVIII Signature</strong>
+              </h3>
+              <p className="text-16p pb-11p ">
+                Born in cricket, stitched in culture | Live Now
+              </p>
+              <button className="text-16 text-black bg-white rounded-50 px-32p py-11p ">
+                Shop Now
+              </button>
+            </div>
+          </header>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <header className="w-full h-screen relative ">
+            <img
+              src={HeroImg}
+              alt=""
+              className="w-full h-screen object-cover object-center "
+            />
+            <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
+              <h3 className="text-24">
+                <strong>Seam XVIII Signature</strong>
+              </h3>
+              <p className="text-16p pb-11p ">
+                Born in cricket, stitched in culture | Live Now
+              </p>
+              <button className="text-16 text-black bg-white rounded-50 px-32p py-11p ">
+                Shop Now
+              </button>
+            </div>
+          </header>
+        </SwiperSlide>
+      </Swiper>
 
       {/* Featured */}
       <section className="w-full my-80p ">
@@ -54,7 +93,7 @@ const Home = () => {
             <strong>Featured</strong>
           </h3>
         </div>
-        <div className="w-full px-16p  pb-30p ">
+        <div className="w-full px-16p pb-30p ">
           <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper">
             <SwiperSlide className="!w-fit ">
               <ProductCard />
@@ -82,11 +121,21 @@ const Home = () => {
             <strong>Virat's Picks</strong>
           </h3>
         </div>
-        <div className="flex items-center justify-center gap-2 pb-30p ">
-          <ViratCard img={Virat1} name="Cricket Ribbed Collar Sweatshirt" />
-          <ViratCard img={Virat2} name="Prime Flo Cap" />
-          <ViratCard img={Virat3} name={"Arc T-Shirt"} />
-          <ViratCard img={Virat4} name="Sync Workwear Jacket" />
+        <div className="flex items-center justify-center gap-2 pb-30p px-16p ">
+          <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper">
+            <SwiperSlide className="!w-fit ">
+              <ViratCard img={Virat1} name="Cricket Ribbed Collar Sweatshirt" />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ViratCard img={Virat2} name="Prime Flo Cap" />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ViratCard img={Virat3} name={"Arc T-Shirt"} />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <ViratCard img={Virat4} name="Sync Workwear Jacket" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 
@@ -127,29 +176,55 @@ const Home = () => {
           </h3>
         </div>
         <div className="flex justify-center gap-1 px-4 w-full pb-30p ">
-          <EveryDayCard img={Footwear} name="Footwear" />
-          <EveryDayCard img={Clothing} name="Clothing" />
-          <EveryDayCard img={Caps} name="Caps" />
-          <EveryDayCard img={Lifestyle} name="Active Lifestyle" />
+          <Swiper slidesPerView={"auto"} spaceBetween={10} className="mySwiper">
+            <SwiperSlide className="!w-fit ">
+              <EveryDayCard
+                img={Footwear}
+                name="Footwear"
+                className="w-260p aspect-260/420 "
+              />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit">
+              <EveryDayCard
+                img={Clothing}
+                name="Clothing"
+                className="w-260p aspect-260/420 "
+              />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <EveryDayCard
+                img={Caps}
+                name="Caps"
+                className="w-260p aspect-260/420 "
+              />
+            </SwiperSlide>
+            <SwiperSlide className="!w-fit ">
+              <EveryDayCard
+                img={Lifestyle}
+                name="Active Lifestyle"
+                className="w-260p aspect-260/420 "
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 
       {/* Menswear & Womenswear  */}
-      <section className="w-full h-[1077px] flex items-center justify-cente p-4 my-80p  ">
-        <div className="men_50 w-1/2 bg-white">
-          <div className="w-[928px] h-[1077px] flex flex-col justify-end ">
-            <div className="men_img_wrapper relative w-[742px] aspect-square flex items-end justify-start">
-              <span className="absolute top-0 right-[32px] text-10 text-dark-gray font-RM5 uppercase">
+      <section className="w-full lg:h-[1077px] flex flex-col lg:flex-row items-center justify-cente gap-16p p-4 my-80p ">
+        <div className="men_50 w-full lg:w-1/2 bg-white">
+          <div className="w-full lg:w-[928px] lg:h-[1077px] flex flex-col justify-end ">
+            <div className="men_img_wrapper relative w-full lg:w-[742px] aspect-square flex items-end justify-start">
+              <span className="absolute -top-5 lg:top-0 right-0 lg:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
                 00. // Mens wear
               </span>
 
               <img
                 src={Men}
                 alt=""
-                className="men_img w-[725px] aspect-square object-center object-cover"
+                className="men_img lg:w-[725px] aspect-square object-center object-cover"
               />
 
-              <div className="men_side_text absolute top-[22px] left-full rotate-90 origin-top-left w-[907px] flex flex-row ">
+              <div className="men_side_text absolute lg:top-[22px] -bottom-5 right-0 lg:left-full lg:rotate-90 lg:origin-top-left lg:w-[907px] flex flex-row ">
                 <span className="text-10 text-dark-gray font-RM5 uppercase text-center">
                   Engineered for comfort
                 </span>
@@ -157,7 +232,7 @@ const Home = () => {
             </div>
 
             <div className="pt-16p">
-              <h3 className="text-24 text-dark font-OB pb-8p">Menswear</h3>
+              <h3 className="text-24 text-dark font-OB lg:pb-8p">Menswear</h3>
               <p className="text-16 text-dark font-OM pb-24p">
                 Movement in every form
               </p>
@@ -170,20 +245,20 @@ const Home = () => {
 
         {/*  */}
 
-        <div className="men_50 w-1/2 bg-white">
-          <div className="w-[928px] h-[1077px] flex flex-col justify-end ">
-            <div className="men_img_wrapper relative w-[742px] aspect-square flex items-end justify-start ">
-              <span className="absolute top-0 right-[32px] text-10 text-dark-gray font-RM5 uppercase">
+        <div className="men_50 w-full lg:w-1/2 bg-white">
+          <div className="lg:w-[928px] lg:h-[1077px] flex flex-col justify-end ">
+            <div className="men_img_wrapper relative lg:w-[742px] aspect-square flex items-end justify-start ">
+              <span className="absolute -top-5 lg:top-0 right-0 lg:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
                 00. // Womens wear
               </span>
 
               <img
                 src={Women}
                 alt=""
-                className="men_img w-[725px] aspect-square object-center object-cover"
+                className="men_img lg:w-[725px] aspect-square object-center object-cover"
               />
 
-              <div className="men_side_text absolute top-[22px] left-full rotate-90 origin-top-left w-[907px] flex flex-row ">
+              <div className="men_side_text absolute lg:top-[22px] lg:left-full right-0 -bottom-5 lg:rotate-90 origin-top-left lg:w-[907px] flex flex-row ">
                 <span className="text-10 text-dark-gray font-RM5 uppercase text-center">
                   Engineered for comfort
                 </span>
@@ -191,7 +266,7 @@ const Home = () => {
             </div>
 
             <div className="pt-16p">
-              <h3 className="text-24 text-dark font-OB pb-8p">Womenswear</h3>
+              <h3 className="text-24 text-dark font-OB lg:pb-8p">Womenswear</h3>
               <p className="text-16 text-dark font-OM pb-24p">
                 For the everyday athlete
               </p>
@@ -209,12 +284,12 @@ const Home = () => {
           <img
             src={AnOdeToCricket}
             alt=""
-            className="w-[1920px] aspect-1920/853 object-cover object-center rounded-t-lg "
+            className="w-full aspect-400/500 lg:w-[1920px] lg:aspect-1920/853 object-cover object-center rounded-t-lg "
           />
         </div>
         <div className="w-full flex flex-col items-center gap-4 pt-16p ">
           <h3 className="text-36 text-dark-gray font-OB ">An Ode To Cricket</h3>
-          <p className="tex-18 text-dark-gray font-OM ">
+          <p className="tex-18 text-dark-gray font-OM text-center ">
             A collection built around the heritage of the game. Find one that's
             yours.
           </p>

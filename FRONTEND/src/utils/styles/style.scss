@@ -33,19 +33,22 @@
   }
 
   // Hover the whole product card
-  &:hover {
-    .product_img_1 {
-      display: none;
-    }
-    .product_img_2 {
-      display: block;
-    }
-    .add_to_bag_btn {
-      gap: 0.5rem;
 
-      .abb_to_bag_text {
-        max-width: 150px;
-        opacity: 1;
+  @media (min-width: 1024px) {
+    &:hover {
+      .product_img_1 {
+        display: none;
+      }
+      .product_img_2 {
+        display: block;
+      }
+      .add_to_bag_btn {
+        gap: 0.5rem;
+
+        .abb_to_bag_text {
+          max-width: 150px;
+          opacity: 1;
+        }
       }
     }
   }

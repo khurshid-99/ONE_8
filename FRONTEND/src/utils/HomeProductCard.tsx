@@ -8,11 +8,11 @@ const ProductCard = () => {
 
   const style = {
     fill: `${wish ? "#ff0000" : "#ffffff00"}`,
-    stock: `${wish ? "#ff0000" : "#000000"}`
+    stock: `${wish ? "#ff0000" : "#000000"}`,
   };
 
   return (
-    <div className="product_card relative w-111 aspect-444/719 bg-light flex flex-col justify-between rounded-lg overflow-hidden select-none shrink-0">
+    <div className="product_card relative w-305p lg:w-111 aspect-305/530 lg:aspect-444/719 bg-light flex flex-col justify-between gap-1 rounded-lg overflow-hidden select-none shrink-0">
       <div className="w-full  ">
         <img
           src={Shoe1}

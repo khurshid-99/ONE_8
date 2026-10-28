@@ -5,9 +5,10 @@ interface IVirat {
   name: string;
   wd?: number;
   hd?: number;
+  className: string;
 }
 
-const EveryDayCard = ({ img, name, wd = 386, hd = 463 }: IVirat) => {
+const EveryDayCard = ({ img, name, wd = 386, hd = 463, className }: IVirat) => {
   const style = {
     "--card-width": `${wd}px`,
     "--card-ratio": `${wd} / ${hd}`,
@@ -16,12 +17,12 @@ const EveryDayCard = ({ img, name, wd = 386, hd = 463 }: IVirat) => {
   return (
     <div
       style={style}
-      className={`virat_card relative w-(--card-width) aspect-(--card-ratio) rounded-lg overflow-hidden`}
+      className={`virat_card relative w-(--card-width) aspect-(--card-ratio) rounded-lg overflow-hidden ${className} `}
     >
       <img
         src={img}
         alt=""
-        className="w-full aspect-386/463 object-cover object-center "
+        className={`w-full aspect-(--card-ratio) object-cover object-center ${className} `}
       />
       {/*  */}
       <button className="absolute top-2 right-1 ">
@@ -46,7 +47,7 @@ const EveryDayCard = ({ img, name, wd = 386, hd = 463 }: IVirat) => {
 
       <div className="absolute top-0 left-0 w-full h-full z-99  flex flex-col items-center justify-between p-32p ">
         <h5 className="text-20 text-white font-OB">{name}</h5>
-        <button className="virat_card_btn relative z-100 bg-white px-32p py-11p rounded-50 text-16 text-black font-OM opacity-0 active:scale-99 ">
+        <button className="virat_card_btn relative z-100 bg-white px-32p py-11p rounded-50 text-16 text-black font-OM lg:opacity-0 active:scale-99 ">
           Shop Now
         </button>
         <div className="virat_card_logo_8 absolute z-88 top-full ">

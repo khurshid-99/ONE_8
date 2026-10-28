@@ -333,3 +333,44 @@ export const navMenuData = {
     images: [],
   },
 };
+
+export const footerLinks = [
+  {
+    title: "Shop",
+    links: [
+      { title: "An Ode to Cricket", href: "" },
+      { title: "Active Lifestyle", href: "" },
+      { title: "Cover Drive", href: "" },
+      { title: "Hybrid Workout", href: "" },
+    ],
+  },
+  {
+    title: "one8",
+    links: [
+      { title: "About one8", href: "" },
+      { title: "The one8 Promise", href: "" },
+    ],
+  },
+  {
+    title: "Customer Support",
+    links: [
+      { title: "Contact Us", href: "" },
+      { title: "Return & Exchange Portal", href: "" },
+      { title: "FAQs", href: "" },
+    ],
+  },
+  {
+    title: "Account",
+    links: [{ title: "Log In", href: "" }],
+  },
+  {
+    title: "Legal",
+    links: [
+      { title: "Privacy Policy", href: "" },
+      { title: "Terms of Use", href: "" },
+      { title: "Warranty Policy", href: "" },
+      { title: "Return, Exchanges and Refund Policy", href: "" },
+      { title: "Cookie Policy", href: "" },
+    ],
+  },
+];

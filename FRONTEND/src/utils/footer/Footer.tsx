@@ -1,34 +1,44 @@
+import { useState } from "react";
 import { Link } from "react-router";
+import { footerLinks } from "../testData";
 
 const Footer = () => {
+  const [footerData, setFooterData] = useState(footerLinks);
+  const [activeFooterLink, setActiveFooterLink] = useState<
+    boolean | string | null
+  >(false);
+
   return (
     <footer className="w-full bg-dark-gray pt-40p ">
       <div className="max-w-1500p px-16p mx-auto ">
-        <h2 className="text-48 text-white font-OB mb-8p ">
+        <h2 className="text-30 lg:text-48 text-white font-OB mb-8p ">
           Join the one8 movement
         </h2>
-        <p className="text-18 text-white font-OM ">
+        <p className="text-16 lg:text-18 text-white font-OM ">
           Get exclusive drops, training tips, and stories that fuel your next
           breakthrough - straight to your inbox.
         </p>
-        <div className="flex items-center justify-between gap-[32px] pt-70p pb-24p  ">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-[32px] pt-70p pb-24p  ">
           <input
             type="email"
             name="email-join-the-newsletter"
             id=""
             placeholder="Enter your email address"
-            className="w-308.5 h-[80px] text-60 text-white font-OB border-b border-gray-medium outline-none placeholder:text-60 placeholder:font-OB  "
+            className="w-full lg:w-308.5 lg:h-[80px] text-20 lg:text-60 text-white font-OB border-b border-gray-medium outline-none placeholder:text-20 lg:placeholder:text-60 placeholder:font-OB  "
           />
-          <button className="px-32p py-11p bg-cyan text-16 text-dark-gray font-OM rounded-50 ">
+          <button
+            className="w-full md:w-fit
+           px-32p py-11p bg-cyan text-16 text-dark-gray font-OM rounded-50 "
+          >
             Join the newsletter
           </button>
         </div>
       </div>
 
       {/*  */}
-      <div className="border-t border-b border-gray-medium  ">
-        <div className="relative max-w-1500p mx-auto flex justify-center ">
-          <div className="absolute top-40p -left-70p w-[20px] h-auto ">
+      <div className="border-t border-b border-gray-medium ">
+        <div className="relative max-w-1500p mx-auto flex flex-col lg:flex-row lg:justify-center pt-40p ">
+          <div className="absolute md:top-40p left-16p md:-left-70p w-[20px] h-auto ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -43,8 +53,76 @@ const Footer = () => {
               ></path>
             </svg>
           </div>
-          {/*  */}
-          <nav className="w-1210p flex items-start justify-between px-16p py-40p border-r border-gray-medium ">
+
+          {/* Mobile */}
+          <nav className="mt-60p grid grid-cols-1 gap-6p px-16p lg:hidden ">
+            {footerData.map((item) => {
+              const isActive = activeFooterLink === item.title;
+
+              return (
+                <div key={item.title}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveFooterLink(isActive ? null : item.title)
+                    }
+                    aria-expanded={isActive}
+                    className="flex w-full items-center justify-between text-18 font-OB text-white"
+                  >
+                    {item.title}
+
+                    <span
+                      className={`inline-block aspect-square w-12p transition-transform duration-300 ${
+                        isActive ? "rotate-45" : "rotate-0"
+                      }`}
+                    >
+                      <svg
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="0.5"
+                          y1="6"
+                          x2="11.5"
+                          y2="6"
+                          stroke="currentColor"
+                        />
+
+                        <line
+                          x1="6"
+                          y1="0.5"
+                          x2="6"
+                          y2="11.5"
+                          stroke="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+
+                  {/* Animated submenu */}
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                      isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <ul className="grid grid-cols-1 gap-8p pb-10p text-14 font-OM text-white mt-10p ">
+                        {item.links.map((link) => (
+                          <li key={link.title}>
+                            <Link to={link.href}>{link.title}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* Dextop  */}
+          <nav className="hidden xl:w-1210p xl:flex items-start justify-between px-16p py-40p border-r border-gray-medium ">
             <div className="w-[222.8px] flex flex-col gap-[16px] ">
               <Link to={""} className="text-18 text-white font-OB ">
                 Shop
@@ -137,7 +215,7 @@ const Footer = () => {
             {/*  */}
           </nav>
           {/*  */}
-          <div className="px-24p py-40p flex flex-col items-start gap-[16px] text-white ">
+          <div className="px-16p lg:px-24p py-40p flex flex-col items-start gap-[16px] text-white ">
             <span className="block text-18 font-OB ">Follow</span>
             <span className="block text-14 font-OM ">
               Connect with us on our social channels
@@ -269,7 +347,7 @@ const Footer = () => {
 
       {/*  */}
       <div className="max-w-1500p mx-auto ">
-        <div className="py-24p flex items-center gap-32p  ">
+        <div className="py-24p flex flex-col lg:flex-row items-center gap-6p lg:gap-32p  ">
           <span className="text-14 text-white font-OM ">© one8 2026</span>
           <div className="flex items-center gap-8p ">
             <svg
@@ -465,7 +543,7 @@ const Footer = () => {
         </div>
 
         {/*  */}
-        <div className="mt-32p ">
+        <div className="mt-32p px-16p ">
           <svg
             width="325"
             height="102"
