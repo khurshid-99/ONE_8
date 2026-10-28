@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 import gsap from "gsap";
@@ -15,7 +14,7 @@ import {
   MenRunning,
 } from "../../images";
 import Bag from "./components/Bag";
-import MobileMenu from "./components/MobileMenu";
+import MobileMenu, { type MobileMenuRef } from "./components/MobileMenu";
 import type { ToggleRef } from "../toggleComponents/Toggle";
 
 type MenuLink = {
@@ -382,7 +381,6 @@ export default function Navbar() {
 
   const [searchOpen, setSearchOpen] = useState(false);
 
- 
   const [text, setText] = useState("");
 
   const navbarRef = useRef<HTMLElement | null>(null);
@@ -390,6 +388,9 @@ export default function Navbar() {
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   const [isBagActive, setIsBagActive] = useState<boolean>(false);
+
+  const [isMenuActive, setIsMenuActive] = useState(false);
+  const mobileMenuRef = useRef<MobileMenuRef>(null);
 
   /**
    * ------------------------
@@ -466,29 +467,6 @@ export default function Navbar() {
     };
   }, []);
 
-  /*
-   * ------------------------------------
-   * Navbar scroll
-   * ------------------------------------
-   */
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!navbarRef.current) return;
-
-  //     if (window.scrollY > 20) {
-  //       navbarRef.current.classList.add("navbar_scrolled");
-  //     } else {
-  //       navbarRef.current.classList.remove("navbar_scrolled");
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   /*
    * ------------------------------------
@@ -525,9 +503,8 @@ export default function Navbar() {
     setActiveSubMenu(null);
 
     setSearchOpen(false);
-
   };
-  
+
   const activeData = activeMenu ? navData[activeMenu] : null;
 
   const activeSubMenuData = activeData?.menu.find(
@@ -547,7 +524,7 @@ export default function Navbar() {
     const previousBodyTop = body.style.top;
     const previousBodyWidth = body.style.width;
 
-    if (isBagActive) {
+    if (isBagActive || isMenuActive) {
       // Save current scroll position
       const scrollY = window.scrollY;
 
@@ -570,80 +547,83 @@ export default function Navbar() {
       // Restore previous scroll position
       window.scrollTo(0, scrollY);
     };
-  }, [isBagActive]);
+  }, [isBagActive, isMenuActive]);
 
-  const [isMenuActive, setIsMenuActive] = useState(false);
-  const mobileMenuRef = useRef<ToggleRef>(null);
+  
+
   return (
     <>
       <nav
         ref={navbarRef}
-        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}`}
+        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p `}
       >
+
+        {/* ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`} */}
+
         {/* Mobile navigation */}
         <div className="flex items-center gap-16p xl:hidden ">
-          <div>
-            {!isMenuActive ? (
-              <button onClick={() => setIsMenuActive(true)} className="">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  className="pointer-events-none "
-                >
-                  <path
-                    d="M6.66699 9.33334H25.3337"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M6.66699 16H25.3337"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M6.66699 22.6667H25.3337"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </button>
-            ) : (
-              <button onClick={() => mobileMenuRef.current?.close()}>
-                {" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                >
-                  <path
-                    d="M6.66406 6.66666L25.3307 25.3333"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="round"
-                  ></path>
-                  <path
-                    d="M25.3359 6.66666L6.66927 25.3333"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="square"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </button>
-            )}
-          </div>
+          {isMenuActive === false ? (
+            <button onClick={() => setIsMenuActive(true)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="red"
+                className="pointer-events-none "
+              >
+                <path
+                  d="M6.66699 9.33334H25.3337"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="square"
+                  strokeLinejoin="round"
+                ></path>
+                <path
+                  d="M6.66699 16H25.3337"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="square"
+                  strokeLinejoin="round"
+                ></path>
+                <path
+                  d="M6.66699 22.6667H25.3337"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="square"
+                  strokeLinejoin="round"
+                ></path>
+              </svg>
+            </button>
+          ) : (
+            <button
+              onClick={() => mobileMenuRef.current?.closeMenu()}
+              className=" "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  d="M6.66406 6.66666L25.3307 25.3333"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="square"
+                  strokeLinejoin="round"
+                ></path>
+                <path
+                  d="M25.3359 6.66666L6.66927 25.3333"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="square"
+                  strokeLinejoin="round"
+                ></path>
+              </svg>
+            </button>
+          )}
 
           <button className="w-32p aspect-square ">
             <svg
@@ -914,6 +894,7 @@ export default function Navbar() {
 
             <div className="w-full ">
               <div className="flex justify-between">
+                
                 {/* Menu Items */}
                 {activeSubMenuData?.children && (
                   <div className="pl-40p py-32p bg-[pink] ">
@@ -953,7 +934,7 @@ export default function Navbar() {
                         className=""
                         onClick={() => setActiveMenu(null)}
                       >
-                        <div className="">
+                        <div className=" ">
                           <img
                             src={item.image}
                             alt={item.title}
@@ -970,7 +951,7 @@ export default function Navbar() {
                 )}
               </div>
 
-              <div className=" flex justify-end items-end">
+              <div className="flex justify-end items-end">
                 <svg
                   width="528"
                   height="165"
@@ -1004,8 +985,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
-
 
       {/* BAG */}
       {isBagActive ? (

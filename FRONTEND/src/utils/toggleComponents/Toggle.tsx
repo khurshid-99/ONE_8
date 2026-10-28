@@ -101,7 +101,7 @@ const Toggle = forwardRef<ToggleRef, ToggleProps>(
         ref={sideRef}
         className={`fixed inset-y-0 ${
           side === "right" ? "right-0" : "left-0"
-        } z-50 h-dvh w-full overflow-y-auto bg-white ${className}`}
+        } z-50 min-h-dvh w-full  bg-white ${className}`}
         style={{ transform: `translateX(${direction})` }}
       >
         {children}

@@ -57,7 +57,9 @@
   --text-36: 2.25rem; /* 36px */
   --text-32: 2rem; /* 32px */
   --text-30: 1.875rem; /* 30px */
+  --text-26: 1.625rem; /* 26px */
   --text-24: 1.5rem; /* 24px */
+  --text-22: 1.375rem; /* 22px */
   --text-20: 1.25rem; /* 20px */
   --text-18: 1.125rem; /* 18px */
   --text-16: 1rem; /* 16px */
@@ -99,8 +101,8 @@
   --spacing-35p: 35px;
   --spacing-32p: 32px;
   --spacing-30p: 30px;
-  --spacing-24p: 24px;
   --spacing-25p: 25px;
+  --spacing-24p: 24px;
   --spacing-23p: 23px;
   --spacing-22p: 22px;
   --spacing-21p: 21px;

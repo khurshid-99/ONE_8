@@ -25,7 +25,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Home = () => {
   return (
-    <main className="w-full relative">
+    <main className="w-full relative scrollbar-none xl:scrollbar-auto ">
       <Navbar />
 
       <header className="w-full h-screen relative ">
