@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-dark-gray pt-40p ">
-      <div className="max-w-1500p px-16p lg:px-40p mx-auto ">
+      <div className="max-w-1500p px-16p lg:px-40p 2xl:px-16p mx-auto  ">
         <h2 className="text-30 lg:text-36 2xl:text-48 text-white font-OB mb-8p ">
           Join the one8 movement
         </h2>
@@ -37,7 +37,7 @@ const Footer = () => {
 
       {/*  */}
       <div className="border-t border-b border-gray-medium ">
-        <div className="relative max-w-1500p mx-auto flex flex-col lg:flex-row lg:justify-center px-40p ">
+        <div className="relative max-w-1500p mx-auto flex flex-col lg:flex-row lg:justify-center lg:px-40p 2xl:px-0 ">
           <div className="absolute md:top-40p left-16p md:-left-70p w-[20px] h-auto ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +348,7 @@ const Footer = () => {
       </div>
 
       {/*  */}
-      <div className="max-w-1500p mx-auto lg:px-40p ">
+      <div className="max-w-1500p mx-auto px-40p 2xl:px-16p">
         <div className="py-24p flex flex-col lg:flex-row items-center gap-6p lg:gap-32p  ">
           <span className="text-14 text-white font-OM ">© one8 2026</span>
           <div className="flex items-center gap-8p ">

@@ -44,31 +44,11 @@ const Home = () => {
         modules={[Pagination, Autoplay]}
       >
         <SwiperSlide className="">
-          <header className="w-full lg:aspect-1024/500 relative ">
+          <header className="w-full lg:aspect-1024/500 xl:aspect-1280/630 relative ">
             <img
               src={HeroImg}
               alt=""
-              className="w-full lg:aspect-1024/500 object-cover object-center "
-            />
-            <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
-              <h3 className="text-24">
-                <strong>Seam XVIII Signature</strong>
-              </h3>
-              <p className="text-16p pb-11p ">
-                Born in cricket, stitched in culture | Live Now
-              </p>
-              <button className="text-16 text-black bg-white rounded-50 px-32p py-11p ">
-                Shop Now
-              </button>
-            </div>
-          </header>
-        </SwiperSlide>
-        <SwiperSlide className="">
-          <header className="w-full lg:aspect-1024/500 relative ">
-            <img
-              src={HeroImg}
-              alt=""
-              className="w-full lg:aspect-1024/500 object-cover object-center "
+              className="w-full lg:aspect-1024/500 xl:aspect-1280/630 object-cover object-center "
             />
             <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
               <h3 className="text-24">
@@ -180,28 +160,28 @@ const Home = () => {
               <EveryDayCard
                 img={Footwear}
                 name="Footwear"
-                className="w-260p aspect-260/420 "
+                className="w-260p aspect-260/420 lg:w-386p lg:aspect-386/463 "
               />
             </SwiperSlide>
             <SwiperSlide className="!w-fit">
               <EveryDayCard
                 img={Clothing}
                 name="Clothing"
-                className="w-260p aspect-260/420 "
+                className="w-260p aspect-260/420 lg:w-386p lg:aspect-386/463 "
               />
             </SwiperSlide>
             <SwiperSlide className="!w-fit ">
               <EveryDayCard
                 img={Caps}
                 name="Caps"
-                className="w-260p aspect-260/420 "
+                className="w-260p aspect-260/420 lg:w-386p lg:aspect-386/463 "
               />
             </SwiperSlide>
             <SwiperSlide className="!w-fit ">
               <EveryDayCard
                 img={Lifestyle}
                 name="Active Lifestyle"
-                className="w-260p aspect-260/420 "
+                className="w-260p aspect-260/420 lg:w-386p lg:aspect-386/463 "
               />
             </SwiperSlide>
           </Swiper>
@@ -209,72 +189,64 @@ const Home = () => {
       </section>
 
       {/* Menswear & Womenswear  */}
-      <section className="w-full lg:h-[635px] 2xl:h-[1077px] grid grid-cols-12 gap-16p p-4 my-80p ">
-        <div className="men_50 w-full col-span-12 lg:col-span-6 bg-white">
-          <div className="w-full lg:w-[76%] 2xl:w-[928px] lg:h-[635px] 2xl:h-[1077px] flex flex-col justify-end ">
-            <div className="men_img_wrapper relative w-full 2xl:w-[742px] aspect-square flex items-end justify-start">
-              <span className="absolute -top-5 2xl:top-0 right-0 lg:right-8p 2xl:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
-                00. // Mens wear
-              </span>
+      <section className="w-full lg:h-[635px] xl:h-[765px] 2xl:h-[1085px] grid grid-cols-12 gap-16p px-16p my-80p">
+        <div className="wraper_50 w-full col-span-12 lg:col-span-6 flex flex-col justify-end">
+          <div className="hover_box relative pt-15p pr-15p lg:w-[80%] duration-300 aspect-square ">
+            <span className="absolute top-0 right-4 text-10 text-dark-gray font-RM5 uppercase text-center ">
+              00. // Mens wear
+            </span>
+            <span className="absolute rotate-90 top-36 right-0 origin-top-right text-10 text-dark-gray font-RM5 uppercase text-center">
+              Engineered for comfort
+            </span>
+            {/* --- */}
 
-              <img
-                src={Men}
-                alt=""
-                className="men_img lg:w-full 2xl:w-[725px] aspect-square object-center object-cover"
-              />
+            <img
+              src={Men}
+              alt=""
+              className="w-[99.5%] aspect-square object-center object-cover"
+            />
+          </div>
 
-              <div className="men_side_text absolute 2xl:top-[22px] -bottom-5 lg:bottom-[95%] right-0 lg:left-[105%] 2xl:left-full lg:rotate-90 lg:origin-top-left lg:w-[95%] 2xl:w-[907px] flex flex-row">
-                <span className="text-10 text-dark-gray font-RM5 uppercase text-center">
-                  Engineered for comfort
-                </span>
-              </div>
-            </div>
-
-            <div className="pt-16p">
-              <h3 className="text-24 text-dark font-OB lg:pb-8p">Menswear</h3>
-              <p className="text-16 text-dark font-OM pb-24p">
-                Movement in every form
-              </p>
-              <button className="text-16 text-white font-OM px-32p py-11p bg-dark rounded-50">
-                Shop now
-              </button>
-            </div>
+          <div className="pt-16p">
+            <h3 className="text-24 text-dark font-OB lg:pb-8p">Menswear</h3>
+            <p className="text-16 text-dark font-OM pb-24p">
+              Movement in every form
+            </p>
+            <button className="text-16 text-white font-OM px-32p py-11p bg-dark rounded-50">
+              Shop now
+            </button>
           </div>
         </div>
 
         {/*  */}
+        <div className="wraper_50 w-full col-span-12 lg:col-span-6 flex flex-col justify-end">
+          <div className="hover_box relative pt-15p pr-15p lg:w-[80%] duration-300 aspect-square ">
+            <span className="absolute top-0 right-4 text-10 text-dark-gray font-RM5 uppercase text-center ">
+              00. // Womens wear
+            </span>
+            <span className="absolute rotate-90 top-36 right-0 origin-top-right text-10 text-dark-gray font-RM5 uppercase text-center">
+              Engineered for comfort
+            </span>
+            {/* --- */}
 
-        <div className="men_50 w-full col-span-12 lg:col-span-6 bg-white">
-          <div className=" lg:w-[76%] 2xl:w-[928px] lg:h-[635px] 2xl:h-[1077px] flex flex-col justify-end ">
-            <div className="men_img_wrapper relative w-full 2xl:w-[742px] aspect-square flex items-end justify-start ">
-              <span className="absolute -top-5 2xl:top-0 right-0 lg:right-8p 2lx:right-[32px] text-10 text-dark-gray font-RM5 uppercase">
-                00. // Womens wear
-              </span>
+            <img
+              src={Women}
+              alt=""
+              className="w-[99.5%] aspect-square object-center object-cover"
+            />
+          </div>
 
-              <img
-                src={Women}
-                alt=""
-                className="men_img lg:w-full 2xl:w-[725px] aspect-square object-center object-cover"
-              />
-
-              <div className="men_side_text absolute 2xl:top-[22px] -bottom-5 lg:bottom-[95%] right-0 lg:left-[105%] 2xl:left-full lg:rotate-90 lg:origin-top-left lg:w-[95%] 2xl:w-[907px] flex flex-row">
-                <span className="text-10 text-dark-gray font-RM5 uppercase text-center">
-                  Engineered for comfort
-                </span>
-              </div>
-            </div>
-
-            <div className="pt-16p">
-              <h3 className="text-24 text-dark font-OB lg:pb-8p">Womenswear</h3>
-              <p className="text-16 text-dark font-OM pb-24p">
-                For the everyday athlete
-              </p>
-              <button className="text-16 text-white font-OM px-32p py-11p bg-dark rounded-50">
-                Shop now
-              </button>
-            </div>
+          <div className="pt-16p">
+            <h3 className="text-24 text-dark font-OB lg:pb-8p">Womenswear</h3>
+            <p className="text-16 text-dark font-OM pb-24p">
+              For the everyday athlete
+            </p>
+            <button className="text-16 text-white font-OM px-32p py-11p bg-dark rounded-50">
+              Shop now
+            </button>
           </div>
         </div>
+        {/*  */}
       </section>
 
       {/* An Ode To Cricket */}
