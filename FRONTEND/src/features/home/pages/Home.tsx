@@ -44,13 +44,33 @@ const Home = () => {
         modules={[Pagination, Autoplay]}
       >
         <SwiperSlide className="">
-          <header className="w-full lg:aspect-1024/500 xl:aspect-1280/630 relative ">
+          <header className="w-full aspect-400/685 lg:aspect-1024/500 xl:aspect-1280/630 2xl:aspect-1500/750 relative ">
             <img
               src={HeroImg}
               alt=""
-              className="w-full lg:aspect-1024/500 xl:aspect-1280/630 object-cover object-center "
+              className="w-full aspect-400/685 lg:aspect-1024/500 xl:aspect-1280/630 2xl:aspect-1500/750 object-cover object-center "
             />
-            <div className="absolute top-0 left-0 w-full h-full px-16 pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
+            <div className="absolute top-0 left-0 w-full h-full px-16p pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
+              <h3 className="text-24">
+                <strong>Seam XVIII Signature</strong>
+              </h3>
+              <p className="text-16p pb-11p ">
+                Born in cricket, stitched in culture | Live Now
+              </p>
+              <button className="text-16 text-black bg-white rounded-50 px-32p py-11p ">
+                Shop Now
+              </button>
+            </div>
+          </header>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <header className="w-full aspect-400/685 lg:aspect-1024/500 xl:aspect-1280/630 2xl:aspect-1500/750 relative ">
+            <img
+              src={HeroImg}
+              alt=""
+              className="w-full aspect-400/685 lg:aspect-1024/500 xl:aspect-1280/630 2xl:aspect-1500/750 object-cover object-center "
+            />
+            <div className="absolute top-0 left-0 w-full h-full px-16p pt-32p pb-24p text-white font-OM flex flex-col justify-end items-start gap-3.5 ">
               <h3 className="text-24">
                 <strong>Seam XVIII Signature</strong>
               </h3>

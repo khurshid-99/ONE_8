@@ -467,7 +467,6 @@ export default function Navbar() {
     };
   }, []);
 
-
   /*
    * ------------------------------------
    * Outside click
@@ -549,15 +548,12 @@ export default function Navbar() {
     };
   }, [isBagActive, isMenuActive]);
 
-  
-
   return (
     <>
       <nav
         ref={navbarRef}
-        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p `}
+        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}  `}
       >
-
         {/* ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`} */}
 
         {/* Mobile navigation */}
@@ -894,7 +890,6 @@ export default function Navbar() {
 
             <div className="w-full ">
               <div className="flex justify-between">
-                
                 {/* Menu Items */}
                 {activeSubMenuData?.children && (
                   <div className="pl-40p py-32p bg-[pink] ">
