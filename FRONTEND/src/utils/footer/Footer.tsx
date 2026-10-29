@@ -10,11 +10,11 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-dark-gray pt-40p ">
-      <div className="max-w-1500p px-16p mx-auto ">
-        <h2 className="text-30 lg:text-48 text-white font-OB mb-8p ">
+      <div className="max-w-1500p px-16p lg:px-40p mx-auto ">
+        <h2 className="text-30 lg:text-36 2xl:text-48 text-white font-OB mb-8p ">
           Join the one8 movement
         </h2>
-        <p className="text-16 lg:text-18 text-white font-OM ">
+        <p className="text-16 2xl:text-18 text-white font-OM ">
           Get exclusive drops, training tips, and stories that fuel your next
           breakthrough - straight to your inbox.
         </p>
@@ -24,7 +24,7 @@ const Footer = () => {
             name="email-join-the-newsletter"
             id=""
             placeholder="Enter your email address"
-            className="w-full lg:w-308.5 lg:h-[80px] text-20 lg:text-60 text-white font-OB border-b border-gray-medium outline-none placeholder:text-20 lg:placeholder:text-60 placeholder:font-OB  "
+            className="w-full lg:w-[695px] 2xl:w-308.5 lg:h-[80px] text-20 lg:text-40 2xl:text-60 text-white font-OB border-b border-gray-medium outline-none placeholder:text-20 lg:placeholder:text-40 2xl:placeholder:text-60 placeholder:font-OB  "
           />
           <button
             className="w-full md:w-fit
@@ -37,7 +37,7 @@ const Footer = () => {
 
       {/*  */}
       <div className="border-t border-b border-gray-medium ">
-        <div className="relative max-w-1500p mx-auto flex flex-col lg:flex-row lg:justify-center pt-40p ">
+        <div className="relative max-w-1500p mx-auto flex flex-col lg:flex-row lg:justify-center px-40p ">
           <div className="absolute md:top-40p left-16p md:-left-70p w-[20px] h-auto ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -122,8 +122,9 @@ const Footer = () => {
           </nav>
 
           {/* Dextop  */}
-          <nav className="hidden xl:w-1210p xl:flex items-start justify-between px-16p py-40p border-r border-gray-medium ">
-            <div className="w-[222.8px] flex flex-col gap-[16px] ">
+          <nav className="hidden w-full xl:w-1210p lg:flex lg:flex-wrap gap-x-16p lg:gap-y-40p items-start justify-between px-16p py-40p border-r border-gray-medium ">
+            {/*  */}
+            <div className="min-w-[180px] flex flex-col gap-[16px] ">
               <Link to={""} className="text-18 text-white font-OB ">
                 Shop
               </Link>
@@ -144,7 +145,7 @@ const Footer = () => {
             </div>
 
             {/*  */}
-            <div className="w-[222.8px] flex flex-col gap-[16px] ">
+            <div className="min-w-[180px] flex flex-col gap-[16px] ">
               <Link to={""} className="text-18 text-white font-OB ">
                 one8
               </Link>
@@ -159,7 +160,7 @@ const Footer = () => {
             </div>
 
             {/*  */}
-            <div className="w-[222.8px] flex flex-col gap-[16px] ">
+            <div className="min-w-[180px] flex flex-col gap-[16px] ">
               <Link to={""} className="text-18 text-white font-OB ">
                 Customer Support
               </Link>
@@ -177,7 +178,7 @@ const Footer = () => {
             </div>
 
             {/*  */}
-            <div className="w-[222.8px] flex flex-col gap-[16px] ">
+            <div className="min-w-[180px] flex flex-col gap-[16px] ">
               <Link to={""} className="text-18 text-white font-OB ">
                 Account
               </Link>
@@ -189,7 +190,7 @@ const Footer = () => {
             </div>
 
             {/*  */}
-            <div className="w-[222.8px] flex flex-col gap-[16px] ">
+            <div className="min-w-[180px] flex flex-col gap-[16px] ">
               <Link to={""} className="text-18 text-white font-OB ">
                 Legal
               </Link>
@@ -215,6 +216,7 @@ const Footer = () => {
             {/*  */}
           </nav>
           {/*  */}
+
           <div className="px-16p lg:px-24p py-40p flex flex-col items-start gap-[16px] text-white ">
             <span className="block text-18 font-OB ">Follow</span>
             <span className="block text-14 font-OM ">
@@ -346,7 +348,7 @@ const Footer = () => {
       </div>
 
       {/*  */}
-      <div className="max-w-1500p mx-auto ">
+      <div className="max-w-1500p mx-auto lg:px-40p ">
         <div className="py-24p flex flex-col lg:flex-row items-center gap-6p lg:gap-32p  ">
           <span className="text-14 text-white font-OM ">© one8 2026</span>
           <div className="flex items-center gap-8p ">
@@ -543,7 +545,7 @@ const Footer = () => {
         </div>
 
         {/*  */}
-        <div className="mt-32p px-16p ">
+        <div className="mt-32p ">
           <svg
             width="325"
             height="102"
