@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { ArrowDown } from "../../images";
 import { useLocation } from "react-router";
+import type { ToggleRef } from "../toggleComponents/Toggle";
 
 type FilterGroup = {
   title: string;
   options: string[];
 };
+
+interface SideNavProps {
+  className?: string;
+  toggleRef?: React.RefObject<ToggleRef | null>;
+}
 
 const filterGroups: FilterGroup[] = [
   {
@@ -67,7 +73,7 @@ const filterGroups: FilterGroup[] = [
   },
 ];
 
-const SideNav = () => {
+const SideNav = ({ className, toggleRef }: SideNavProps) => {
   const [openGroups, setOpenGroups] = useState<string[]>([]);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
@@ -93,8 +99,10 @@ const SideNav = () => {
     setSelectedFilters([]);
   };
   return (
-    <aside className="sticky top-5 w-101.25 shrink-0 self-start p-20p">
-      <div className=" flex flex-col ">
+    <aside
+      className={` sticky top-5 w-101.25 shrink-0 self-start p-20p ${className} `}
+    >
+      <div className="relative flex flex-col ">
         <div className="border-b border-gray-muted w-full ">
           <h3 className="text-36 leading-44p text-dark-gray font-OB capitalize ">
             {path.pathname?.split("/")[2]}
@@ -129,6 +137,23 @@ const SideNav = () => {
               </div>
             </div>
           )}
+        </div>
+        <div
+          onClick={() => toggleRef.current?.close()}
+          className="absolute top-5 right-0 cursor-pointer lg:hidden  "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M8 1C11.8656 1 15 4.13438 15 8C15 11.8656 11.8656 15 8 15C4.13438 15 1 11.8656 1 8C1 4.13438 4.13438 1 8 1ZM8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16ZM11.1062 5.6L10.4 4.89375L10.0469 5.24687L8 7.29375L5.95312 5.24687L5.6 4.89375L4.89375 5.6L5.24687 5.95312L7.29375 8L5.24687 10.0469L4.89375 10.4L5.6 11.1062L5.95312 10.7531L8 8.70625L10.0469 10.7531L10.4 11.1062L11.1062 10.4L8.70625 8L10.7531 5.95312L11.1062 5.6Z"
+              fill="currentColor"
+            ></path>
+          </svg>
         </div>
       </div>
 

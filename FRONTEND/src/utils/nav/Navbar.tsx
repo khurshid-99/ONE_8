@@ -778,28 +778,26 @@ export default function Navbar() {
               </Link>
             </div>
             {/*  */}
-            <div onClick={() => setIsBagActive(!isBagActive)}>
-              <Link to={""}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  className="min-w-32p w-32p h-32p "
-                >
-                  <path
-                    d="M6.66602 11.3333C6.66602 10.2288 7.56145 9.33334 8.66602 9.33334H23.3327C24.4373 9.33334 25.3327 10.2288 25.3327 11.3333V25C25.3327 26.6569 23.9895 28 22.3327 28H9.66601C8.00916 28 6.66602 26.6569 6.66602 25V11.3333Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  ></path>
-                  <path
-                    d="M20 13.3333V7C20 5.34315 18.6569 4 17 4H15C13.3431 4 12 5.34314 12 7V13.3333"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  ></path>
-                </svg>
-              </Link>
+            <div onClick={() => setIsBagActive(true)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                className="min-w-32p w-32p h-32p "
+              >
+                <path
+                  d="M6.66602 11.3333C6.66602 10.2288 7.56145 9.33334 8.66602 9.33334H23.3327C24.4373 9.33334 25.3327 10.2288 25.3327 11.3333V25C25.3327 26.6569 23.9895 28 22.3327 28H9.66601C8.00916 28 6.66602 26.6569 6.66602 25V11.3333Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                ></path>
+                <path
+                  d="M20 13.3333V7C20 5.34315 18.6569 4 17 4H15C13.3431 4 12 5.34314 12 7V13.3333"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                ></path>
+              </svg>
             </div>
           </div>
         </div>
@@ -982,10 +980,8 @@ export default function Navbar() {
       )}
 
       {/* BAG */}
-      {isBagActive ? (
+      {isBagActive && (
         <Bag isBagActive={isBagActive} setIsBagActive={setIsBagActive} />
-      ) : (
-        ""
       )}
       {/* */}
     </>

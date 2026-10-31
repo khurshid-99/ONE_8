@@ -1,8 +1,8 @@
-import ProductCard from "../productCard/ProductCard"
+import ProductCard from "../productCard/ProductCard";
 
 const ProductPage = () => {
   return (
-    <div className="flex-1 min-w-0 pt-23p flex flex-wrap gap-21p items-start justify-center border-t border-gray-muted ">
+    <div className="grid auto-rows-min grid-cols-2 lg:grid-cols-3 gap-8p lg:gap-21p border-t border-gray-muted pt-24p lg:px-0 ">
       <ProductCard />
       <ProductCard />
       <ProductCard />

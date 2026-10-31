@@ -44,7 +44,7 @@ const Bag = ({ isBagActive, setIsBagActive }: ActiveBagData) => {
   if (!isBagActive) return null;
 
   return (
-    <div className="fixed inset-0 z-999 flex justify-end bg-[#0000007e]">
+    <div className="fixed inset-0 z-9999 flex justify-end bg-[#0000007e]">
       <aside
         ref={asideRef}
         className="flex h-screen w-101.25 flex-col overflow-hidden bg-[#fbfdfb]  "

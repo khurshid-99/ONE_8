@@ -58,6 +58,7 @@
   --text-36: 2.25rem; /* 36px */
   --text-32: 2rem; /* 32px */
   --text-30: 1.875rem; /* 30px */
+  --text-28: 1.75rem; /* 28px */
   --text-26: 1.625rem; /* 26px */
   --text-24: 1.5rem; /* 24px */
   --text-22: 1.375rem; /* 22px */
@@ -97,6 +98,7 @@
   --spacing-90p: 90px;
   --spacing-80p: 80px;
   --spacing-84p: 84px;
+  --spacing-75p: 75px;
   --spacing-70p: 70px;
   --spacing-65p: 4.0625rem; /* 65px */
   --spacing-62p: 62px;
@@ -123,10 +125,12 @@
   --spacing-10p: 10px;
   --spacing-8p: 8px;
   --spacing-6p: 6px;
+  --spacing-4p: 4px;
 
   /* Radius */
   --radius-50: 50px;
   --radius-8: 8px;
+  --radius-5: 5px;
 }
 
 #root {

@@ -75,13 +75,12 @@ const ProductCard = () => {
             <button className="w-24p aspect-square rounded-full bg-[#8f96ff] cursor-pointer  "></button>
             <button className="w-24p aspect-square rounded-full bg-black "></button>
           </div>
-          <button className="add_to_bag_btn cursor-pointer ">
+          <button className="add_to_bag_btn px-8p lg:px-11p lg:py-8p aspect-square lg:aspect-auto border border-[#888787] outline-none flex items-center rounded-5 bg-gray-light">
             <svg
-              width="16"
-              height="18"
               viewBox="0 0 16 18"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="w-14p lg:w-18p aspect-square "
             >
               <path
                 d="M5.71429 3.375V4.5H10.2857V3.375C10.2857 2.13398 9.26071 1.125 8 1.125C6.73929 1.125 5.71429 2.13398 5.71429 3.375ZM4.57143 4.5V3.375C4.57143 1.51172 6.10714 0 8 0C9.89286 0 11.4286 1.51172 11.4286 3.375V4.5H14.2857C15.2321 4.5 16 5.25586 16 6.1875V14.625C16 16.4883 14.4643 18 12.5714 18H3.42857C1.53571 18 0 16.4883 0 14.625V6.1875C0 5.25586 0.767857 4.5 1.71429 4.5H4.57143ZM5.14286 5.625H1.71429C1.4 5.625 1.14286 5.87813 1.14286 6.1875V14.625C1.14286 15.866 2.16786 16.875 3.42857 16.875H12.5714C13.8321 16.875 14.8571 15.866 14.8571 14.625V6.1875C14.8571 5.87813 14.6 5.625 14.2857 5.625H10.8571H5.14286ZM4.57143 11.25C4.57143 10.9406 4.82857 10.6875 5.14286 10.6875H7.42857V8.4375C7.42857 8.12813 7.68571 7.875 8 7.875C8.31429 7.875 8.57143 8.12813 8.57143 8.4375V10.6875H10.8571C11.1714 10.6875 11.4286 10.9406 11.4286 11.25C11.4286 11.5594 11.1714 11.8125 10.8571 11.8125H8.57143V14.0625C8.57143 14.3719 8.31429 14.625 8 14.625C7.68571 14.625 7.42857 14.3719 7.42857 14.0625V11.8125H5.14286C4.82857 11.8125 4.57143 11.5594 4.57143 11.25Z"
@@ -89,7 +88,7 @@ const ProductCard = () => {
               ></path>
             </svg>
 
-            <span className="abb_to_bag_text">Add to Bag</span>
+            <span className="abb_to_bag_text ">Add to Bag</span>
           </button>
         </div>
       </div>

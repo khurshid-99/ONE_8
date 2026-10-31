@@ -66,7 +66,7 @@ const Home = () => {
         <SwiperSlide className="">
           <header className="w-full aspect-400/685 lg:aspect-1024/500 xl:aspect-1280/630 2xl:aspect-1500/750 relative ">
             <img
-              src={HeroImg}
+              src={Virat1}
               alt=""
               className="w-full aspect-400/685 lg:aspect-1024/500 xl:aspect-1280/630 2xl:aspect-1500/750 object-cover object-center "
             />
