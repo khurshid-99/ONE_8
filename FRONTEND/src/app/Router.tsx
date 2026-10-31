@@ -19,6 +19,7 @@ import MenSeam from "../features/men/pages/MenSeam";
 import MenRunningShoes from "../features/men/pages/MenRunningShoes";
 import AnOdToCricketPage from "../features/featured/pages/AnOdToCricket.Page";
 import ActiveLifestylePage from "../features/featured/pages/ActiveLifestyle.Page";
+import NotFound from "./NotFound";
 
 const AppRouter = createBrowserRouter([
   {
@@ -116,6 +117,10 @@ const AppRouter = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

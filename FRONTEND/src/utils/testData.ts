@@ -71,15 +71,19 @@ export const navMenuData = {
       {
         title: "Featured",
         children: {
-          heading: "By Products",
+          heading: "Featured",
           items: [
             {
+              title: "By Collection",
+              href: "/collections/women-all",
+            },
+            {
               title: "Seam Collection",
-              href: "/collections/seam-collection",
+              href: "/collections/womens-seam",
             },
             {
               title: "Active Lifestyle",
-              href: "/collections/active-lifestyle",
+              href: "/collections/womens-active-lifestyle",
             },
           ],
         },
@@ -96,11 +100,11 @@ export const navMenuData = {
             },
             {
               title: "Gym",
-              href: "/collections/women-gym",
+              href: "/collections/womens-footwear-training",
             },
             {
               title: "Running",
-              href: "/collections/women-running",
+              href: "/collections/women-running-shoes",
             },
             {
               title: "Sneakers",
@@ -117,11 +121,11 @@ export const navMenuData = {
           items: [
             {
               title: "View All",
-              href: "/collections/women-clothing",
+              href: "/collections/women-all-clothing",
             },
             {
               title: "T-shirts",
-              href: "/collections/women-tshirts",
+              href: "/collections/women-t-shirts",
             },
             {
               title: "Jackets",

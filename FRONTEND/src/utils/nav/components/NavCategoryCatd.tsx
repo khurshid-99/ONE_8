@@ -1,13 +1,18 @@
+import { Link } from "react-router";
+
+
 interface CardProps {
   img: string;
   title: string;
-  // key: string | number;
+  href?: string;
+  fn?: () => void;
 }
 
-const NavCategoryCatd = ({  img, title }: CardProps) => {
+const NavCategoryCatd = ({ img, title, href, fn }: CardProps) => {
   // console.log(key)
+
   return (
-    <div  className="flex flex-col gap-2 ">
+    <Link to={href ?? "/"} onClick={() => fn?.()} className="flex flex-col gap-2 ">
       <div className=" ">
         <img
           src={img}
@@ -18,7 +23,7 @@ const NavCategoryCatd = ({  img, title }: CardProps) => {
       <span className="text-18 text-dark font-OB leading-16p capitalize ">
         {title}
       </span>
-    </div>
+    </Link>
   );
 };
 

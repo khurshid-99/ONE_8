@@ -216,12 +216,14 @@ const MobileMenu = ({ isActive, setIsActive, ref }: Props) => {
               {/*  */}
               <ul className="text-22 text-gray-dark font-OB grid grid-cols-1 gap-12p ">
                 <li className="text-26 text-dark-gray uppercase mb-12p ">
-                  <Link to={""}>{selectedCategory?.title}</Link>
+                  {selectedCategory?.title}
                 </li>
                 {selectedCategory?.menu?.map((item) => (
                   <li key={item.title} className=" ">
                     {item.href ? (
-                      <Link to={""}>{item.title}</Link>
+                      <Link to={item.href} onClick={() => HandleCloseMenu()}>
+                        {item.title}
+                      </Link>
                     ) : (
                       <button
                         type="button"
@@ -232,20 +234,18 @@ const MobileMenu = ({ isActive, setIsActive, ref }: Props) => {
                         className="w-full flex justify-between items-center"
                       >
                         <span> {item.title}</span>
-                        <Link to={""} className={`duration-300  `}>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="25"
-                            viewBox="0 0 25 25"
-                            fill="none"
-                          >
-                            <path
-                              d="M18.7837 11.5699C19.0335 11.8197 19.0335 12.2216 18.7837 12.4714L14.2759 16.9792C14.0261 17.229 13.6242 17.229 13.3744 16.9792C13.1246 16.7294 13.1246 16.3275 13.3744 16.0777L16.7947 12.6574L5.71298 12.6574C5.35987 12.6574 5.07438 12.3719 5.07626 12.0207C5.07813 11.6694 5.35987 11.3839 5.7111 11.382L16.7928 11.382L13.3725 7.96175C13.1227 7.71194 13.1227 7.31 13.3725 7.06019C13.6223 6.81038 14.0242 6.81038 14.2741 7.06019L18.7819 11.568L18.7837 11.5699Z"
-                              fill="currentColor"
-                            ></path>
-                          </svg>
-                        </Link>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 25 25"
+                          fill="none"
+                        >
+                          <path
+                            d="M18.7837 11.5699C19.0335 11.8197 19.0335 12.2216 18.7837 12.4714L14.2759 16.9792C14.0261 17.229 13.6242 17.229 13.3744 16.9792C13.1246 16.7294 13.1246 16.3275 13.3744 16.0777L16.7947 12.6574L5.71298 12.6574C5.35987 12.6574 5.07438 12.3719 5.07626 12.0207C5.07813 11.6694 5.35987 11.3839 5.7111 11.382L16.7928 11.382L13.3725 7.96175C13.1227 7.71194 13.1227 7.31 13.3725 7.06019C13.6223 6.81038 14.0242 6.81038 14.2741 7.06019L18.7819 11.568L18.7837 11.5699Z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
                       </button>
                     )}
                   </li>
@@ -292,9 +292,9 @@ const MobileMenu = ({ isActive, setIsActive, ref }: Props) => {
 
                       <ul className="flex flex-col gap-6p text-14 text-dark font-OM  ">
                         <li className="font-OB uppercase mb-6p ">
-                          <Link to={""}>
-                            {selectSubCategory?.children?.heading}
-                          </Link>
+                          {/* <Link to={""}> */}
+                          {selectSubCategory?.children?.heading}
+                          {/* </Link> */}
                         </li>
                         {selectSubCategory.children.items.map(
                           (
@@ -302,20 +302,30 @@ const MobileMenu = ({ isActive, setIsActive, ref }: Props) => {
                             index: number,
                           ) => (
                             <li className={``}>
-                              <Link to={href}>{title}</Link>
+                              <Link
+                                to={href}
+                                onClick={() => HandleCloseMenu()}
+                                className="block"
+                              >
+                                {title}
+                              </Link>
                             </li>
                           ),
                         )}
                       </ul>
 
                       <div className="flex flex-col items-center gap-24p pt-32p mb-20">
-                        {selectedCategory?.images?.map(({ title, image }) => (
-                          <NavCategoryCatd
-                            key={title}
-                            img={image}
-                            title={title}
-                          />
-                        ))}
+                        {selectedCategory?.images?.map(
+                          ({ title, image, href }) => (
+                            <NavCategoryCatd
+                              key={title}
+                              img={image}
+                              title={title}
+                              href={href}
+                              fn={HandleCloseMenu}
+                            />
+                          ),
+                        )}
                       </div>
                     </div>
                   </div>
@@ -325,7 +335,13 @@ const MobileMenu = ({ isActive, setIsActive, ref }: Props) => {
 
               <div className="flex flex-col items-center gap-24p pt-32p mb-20 ">
                 {selectedCategory?.images?.map(({ title, image, href }) => (
-                  <NavCategoryCatd key={title} img={image} title={title} />
+                  <NavCategoryCatd
+                    key={title}
+                    img={image}
+                    title={title}
+                    href={href}
+                    fn={HandleCloseMenu}
+                  />
                 ))}
               </div>
             </div>

@@ -107,15 +107,15 @@ const navData: Record<string, MegaMenuData> = {
           items: [
             {
               title: "By Collection",
-              href: "/collections/women-featured",
+              href: "/collections/women-all",
             },
             {
               title: "Seam Collection",
-              href: "/collections/seam-collection",
+              href: "/collections/womens-seam",
             },
             {
               title: "Active Lifestyle",
-              href: "/collections/active-lifestyle",
+              href: "/collections/womens-active-lifestyle",
             },
           ],
         },
@@ -132,11 +132,11 @@ const navData: Record<string, MegaMenuData> = {
             },
             {
               title: "Gym",
-              href: "/collections/women-gym",
+              href: "/collections/womens-footwear-training",
             },
             {
               title: "Running",
-              href: "/collections/women-running",
+              href: "/collections/women-running-shoes",
             },
             {
               title: "Sneakers",
@@ -153,11 +153,11 @@ const navData: Record<string, MegaMenuData> = {
           items: [
             {
               title: "View All",
-              href: "/collections/women-clothing",
+              href: "/collections/women-all-clothing",
             },
             {
               title: "T-shirts",
-              href: "/collections/women-tshirts",
+              href: "/collections/women-t-shirts",
             },
             {
               title: "Jackets",
@@ -552,7 +552,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navbarRef}
-        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}  `}
+        className={`top_navbar absolute z-999 w-full h-90p grid grid-cols-3 items-center justify-center px-16p xl:px-40p ${path.pathname !== "/" ? "" : `${activeData || isMenuActive ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`}  `}
       >
         {/* ${path.pathname !== "/" ? "" : `${activeData ? `bg-white text-black placeholder:text-light ` : `text-white placeholder:text-white`}`} */}
 
@@ -672,7 +672,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex justify-center ">
-          <Link to={""} className="block w-65p h-48p xl:w-84p xl:h-62p ">
+          <Link to={"/"} className="block w-65p h-48p xl:w-84p xl:h-62p ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 100 120.83"
@@ -890,7 +890,7 @@ export default function Navbar() {
               <div className="flex justify-between">
                 {/* Menu Items */}
                 {activeSubMenuData?.children && (
-                  <div className="pl-40p py-32p bg-[pink] ">
+                  <div className="pl-40p py-32p ">
                     <h3 className="text-32 text-dark font-OB mb-32p">
                       {activeSubMenuData.children.heading}
                     </h3>
@@ -901,7 +901,11 @@ export default function Navbar() {
                           key={child.title}
                           className="text-12 text-dark font-OM mb-12p "
                         >
-                          <Link to={child.href} className="text-16 font-OR">
+                          <Link
+                            to={child.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="text-16 font-OR"
+                          >
                             {child.title}
                           </Link>
                         </li>
