@@ -21,7 +21,6 @@ const Women = () => {
   const isSideNavRef = useRef<ToggleRef | null>(null);
 
   const path = useLocation();
-  
 
   useEffect(() => {
     const html = document.documentElement;
@@ -139,7 +138,7 @@ const Women = () => {
             </Swiper>
           </div>
 
-          <div className="grid grid-cols-2 gap-8p mb-16p ">
+          <div className="grid grid-cols-2 lg:grid-cols-1 lg:justify-self-end gap-8p mb-16p ">
             <Filter data={filtersData} />
             <button
               onClick={() => setIsSideNavActive(true)}
@@ -172,42 +171,3 @@ const Women = () => {
 };
 
 export default Women;
-
-/*
-
-
-<div className="w-full min-w-0 mb-24p px-16p lg:px-24p bg-[green] ">
-            <Swiper
-              slidesPerView="auto"
-              spaceBetween={10}
-              className="mySwiper w-full"
-            >
-              <SwiperSlide className="!w-fit">
-                <CollectionCard
-                  to="/collections/women-gym"
-                  name="Women - Gym"
-                  img={Gym}
-                  className="w-[272px] aspect-[272/340] lg:w-[398px] lg:aspect-[398/460]"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!w-fit">
-                <CollectionCard
-                  to="/collections/women-running"
-                  name="Women - Running"
-                  img={WomenRunningPant}
-                  className="w-[272px] aspect-[272/340] lg:w-[398px] lg:aspect-[398/460]"
-                />
-              </SwiperSlide>
-
-              <SwiperSlide className="!w-fit">
-                <CollectionCard
-                  to="/collections/women-lifestyle"
-                  name="Women - Lifestyle"
-                  img={WomenActiveLifestyle}
-                  className="w-[272px] aspect-[272/340] lg:w-[398px] lg:aspect-[398/460]"
-                />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-*/
