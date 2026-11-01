@@ -31,7 +31,6 @@ const Home = () => {
     <main className="w-full relative scrollbar-none xl:scrollbar-auto ">
       {/* Main navigation bar */}
       <Navbar />
-
       {/* Hero banner slider */}
       <Swiper
         slidesPerView={"auto"}
@@ -101,9 +100,8 @@ const Home = () => {
           </header>
         </SwiperSlide>
       </Swiper>
-
       {/* Featured products section */}
-      <section className="w-full my-80p ">
+      <section className="w-full 2xl:my-80p ">
         {/* Section heading */}
         <div className="py-20p ">
           <h3 className="text-24 text-dark text-center font-OM">
@@ -133,9 +131,8 @@ const Home = () => {
           </Swiper>
         </div>
       </section>
-
       {/* Virat's Picks section */}
-      <section className="w-full my-80p ">
+      <section className="w-full 2xl:my-80p ">
         {/* Section heading */}
         <div className="relative max-w-[1600px] mx-auto px-16p pb-40p ">
           <h3 className="text-24 text-dark font-OB text-center ">
@@ -164,9 +161,8 @@ const Home = () => {
           </Swiper>
         </div>
       </section>
-
       {/* Cricket Collection section */}
-      <section className="w-full my-80p ">
+      <section className="w-full 2xl:my-80p ">
         {/* Section heading */}
         <div className="relative max-w-[1600px] mx-auto px-16p pb-40p ">
           <h3 className="text-24 text-dark font-OB text-center ">
@@ -195,9 +191,8 @@ const Home = () => {
           </Swiper>
         </div>
       </section>
-
       {/* Elevate Your Everyday category section */}
-      <section className="w-full my-80p ">
+      <section className="w-full 2xl:my-80p ">
         {/* Section heading */}
         <div className="relative max-w-[1600px] mx-auto px-16p pb-40p ">
           <h3 className="text-24 text-dark font-OB text-center ">
@@ -246,9 +241,8 @@ const Home = () => {
           </Swiper>
         </div>
       </section>
-
       {/* Menswear and Womenswear promotional section */}
-      <section className="w-full lg:h-[635px] xl:h-[765px] 2xl:h-[1085px] grid grid-cols-12 gap-16p px-16p my-80p">
+      <section className="w-full lg:h-[clamp(635px,65vw,765px)] xl:h-[clamp(765px,60vw,1085px)] 2xl:h-[clamp(900px,60vw,1085px)] grid grid-cols-12 gap-16p px-16p 2xl:my-80p">
         {/* Menswear promotional card */}
         <div className="wraper_50 w-full col-span-12 lg:col-span-6 flex flex-col justify-end">
           {/* Menswear image wrapper with decorative labels */}
@@ -321,7 +315,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* An Ode To Cricket promotional section */}
       <section className="mt-80p pb-80p ">
         {/* Main cricket collection banner image */}
