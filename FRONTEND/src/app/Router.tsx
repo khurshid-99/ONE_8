@@ -20,6 +20,7 @@ import MenRunningShoes from "../features/men/pages/MenRunningShoes";
 import AnOdToCricketPage from "../features/featured/pages/AnOdToCricket.Page";
 import ActiveLifestylePage from "../features/featured/pages/ActiveLifestyle.Page";
 import NotFound from "./NotFound";
+import ProductDetils from "../utils/productDetils/ProductDetils";
 
 const AppRouter = createBrowserRouter([
   {
@@ -115,6 +116,10 @@ const AppRouter = createBrowserRouter([
             Component: ActiveLifestylePage,
           },
         ],
+      },
+      {
+        path: "/product-detils",
+        Component: ProductDetils,
       },
     ],
   },

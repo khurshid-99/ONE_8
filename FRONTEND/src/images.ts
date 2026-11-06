@@ -75,7 +75,18 @@ import Act7 from "../src/assets/active_style/act_img7.webp";
 import ActBanner1 from "../src/assets/active_style/act_banner1.webp";
 import ActBanner2 from "../src/assets/active_style/act_banner2.webp";
 
+import PDShoe1 from "../src/assets/product_detils/shoe1.webp";
+import PDShoe2 from "../src/assets/product_detils/shoe2.jpg";
+import PDShoe3 from "../src/assets/product_detils/shoe3.jpg";
+import PDShoe4 from "../src/assets/product_detils/shoe4.jpg";
+import PDShoe5 from "../src/assets/product_detils/shoe5.jpg";
+
 export {
+  PDShoe1,
+  PDShoe2,
+  PDShoe3,
+  PDShoe4,
+  PDShoe5,
   Act1,
   Act2,
   Act3,
