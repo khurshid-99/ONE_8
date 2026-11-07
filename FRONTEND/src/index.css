@@ -77,27 +77,32 @@
   --color-dark: #1a1a1a;
   --color-gray-light: #e5e5e5;
   --color-dark-gray: #222222;
+  --color-dark-charcoal: #333333;
   --color-cyan: #00ffff;
   --color-gray: #aaaaaa;
   --color-gray-dark: #808080;
   --color-gray-medium: #666666;
   --color-gray-muted: #b2b2b2;
   --color-light: #f5f5f5;
-  --color-light-gray: #cccccc; 
+  --color-light-gray: #cccccc;
   --color-deep-red: #ad0404;
 
   /* Padding / Spacing */
   --spacing-1600p: 1600px;
   --spacing-1500p: 1500px;
+  --spacing-1450p: 1450px;
   --spacing-1210p: 1210px;
   --spacing-530p: 530px;
+  --spacing-455p: 455px;
   --spacing-420p: 420px;
   --spacing-388p: 388px;
   --spacing-386p: 386px;
+  --spacing-380p: 380px;
   --spacing-360p: 360px;
   --spacing-305p: 305px;
   --spacing-260p: 260px;
   --spacing-150p: 150px;
+  --spacing-140p: 140px;
   --spacing-100p: 100px;
   --spacing-90p: 90px;
   --spacing-80p: 80px;
@@ -105,11 +110,15 @@
   --spacing-75p: 75px;
   --spacing-70p: 70px;
   --spacing-65p: 4.0625rem; /* 65px */
+  --spacing-63p: 63px;
   --spacing-62p: 62px;
   --spacing-60p: 60px;
+  --spacing-53p: 53px;
+  --spacing-50p: 50px;
   --spacing-48p: 48px;
   --spacing-44p: 44px;
   --spacing-40p: 40px;
+  --spacing-36p: 36px;
   --spacing-35p: 35px;
   --spacing-32p: 32px;
   --spacing-30p: 30px;

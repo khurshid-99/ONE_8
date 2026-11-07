@@ -1,5 +1,16 @@
 import { Link } from "react-router";
-import { PDShoe1, PDShoe2, PDShoe3, PDShoe4, PDShoe5 } from "../../images";
+import {
+  PDDesignWithPurpose1,
+  PDDesignWithPurpose2,
+  PDDesignWithPurpose3,
+  PDFrame1,
+  PDFrame2,
+  PDShoe1,
+  PDShoe2,
+  PDShoe3,
+  PDShoe4,
+  PDShoe5,
+} from "../../images";
 import { useState } from "react";
 
 const sizes = [
@@ -683,6 +694,139 @@ const ProductDetils = () => {
           </div>
         </div>
         {/*  */}
+      </section>
+      {/*  */}
+      <section className="max-w-1600p mx-auto pt-80p grid grid-cols-12 gap-x-48p ">
+        <div className="col-span-6 flex flex-col justify-center ">
+          <h2 className="text-30 text-dark font-OB mb-16p ">
+            Made for those who live the Game.
+          </h2>
+          <p className="text-16 text-dark font-OR ">
+            Seam XVIII Signature pays homage to the heritage of cricket. The
+            match-day ball inspires the finish and seam detail of the shoe. This
+            is more than a sneaker - it’s an inheritance. Co-created with Virat
+            Kohli, and sealed with his signature, the shoe is a tribute - own
+            it, honour the game.
+          </p>
+        </div>
+        {/*  */}
+        <div className="col-span-6 flex items-center gap-8p ">
+          <div className="w-1/2 ">
+            <img
+              src={PDFrame1}
+              alt=""
+              className="rounded-8 w-380p aspect-380/475"
+            />
+          </div>
+          <div className="w-1/2 ">
+            <img
+              src={PDFrame2}
+              alt=""
+              className="rounded-8 w-380p aspect-380/475 "
+            />
+          </div>
+        </div>
+      </section>
+      {/*  */}
+      <section className="max-w-1600p mx-auto py-80p ">
+        <h2 className="text-36 text-dark font-OB text-center pb-40p  ">
+          An Ode To Cricket
+        </h2>
+        <div className="w-full grid grid-cols-12 gap-x-24p ">
+          <div className="col-span-4 w-517p aspect-517/524">
+            <div className=" w-517p aspect-517/377">
+              <img
+                src={PDDesignWithPurpose1}
+                alt=""
+                className="w-full aspect-517/377 rounded-8 object-center object-cover "
+              />
+            </div>
+            <div>
+              <p className="text-24 text-dark font-OB py-16p ">
+                <strong>Designed With Purpose</strong>
+              </p>
+
+              <p className="text-16 text-dark font-OM ">
+                Drawn directly from the sport's most iconic object - the match
+                day ball. The finish, stitched seam and classic toe-cap take you
+                back to cricket, inspired by the six-row construction of a
+                match-day ball.
+              </p>
+            </div>
+          </div>
+          {/*  */}
+          <div className="col-span-4 w-517p aspect-517/524">
+            <div className=" w-517p aspect-517/377">
+              <img
+                src={PDDesignWithPurpose2}
+                alt=""
+                className="w-full aspect-517/377 rounded-8 object-center object-cover "
+              />
+            </div>
+            <div>
+              <p className="text-24 text-dark font-OB py-16p ">
+                <strong>The Seam Franchise</strong>
+              </p>
+
+              <p className="text-16 text-dark font-OM ">
+                A collection built from the DNA of the cricket ball. Laced or
+                laceless, every silhouette carries the authenticity of the game.
+              </p>
+            </div>
+          </div>
+          {/*  */}
+          <div className="col-span-4 w-517p aspect-517/524">
+            <div className=" w-517p aspect-517/377">
+              <img
+                src={PDDesignWithPurpose3}
+                alt=""
+                className="w-full aspect-517/377 rounded-8 object-center object-cover "
+              />
+            </div>
+            <div>
+              <p className="text-24 text-dark font-OB py-16p ">
+                <strong>All Day, Every Day</strong>
+              </p>
+
+              <p className="text-16 text-dark font-OM ">
+                IMEVA midsole, moulded sockliner, premium soft lining.
+                Effortless from the first wear - engineered for all-day comfort
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*  */}
+      <section className="relative w-full  bg-dark py-36p after:content-[''] after:absolute after:w-0.5 after:h-full after:bg-dark-charcoal after:z-99 after:top-0 after:left-455p ">
+        <div className="w-full aspect-1920/210 flex border-y-2  border-dark-charcoal ">
+          <div className="w-455p aspect-455/210 shrink-0 text-[224px] text-gray-muted font-OR text-center ">
+            “
+          </div>
+          <div className="px-63p pb-16p flex items-end">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 50 108"
+              fill="none"
+              className="w-53p h-50p text-white "
+            >
+              <path
+                d="M23.2515 -1.01635e-06L22.7879 16.1543C14.6592 17.2391 8.38719 24.2202 8.3872 32.6731C8.3872 37.7529 10.6539 42.2981 14.2246 45.3581C5.81286 49.3978 -2.18467e-06 58.0207 -1.7482e-06 68.0058C-1.20849e-06 80.353 8.88869 90.6177 20.5924 92.7069L20.1533 108L29.9425 108L29.5101 92.6868C41.1648 90.5551 50 80.3172 50 68.0058C50 58.0207 44.1871 49.4 35.7732 45.3603C39.3438 42.3026 41.6106 37.7574 41.6106 32.6753C41.6106 24.2694 35.4099 17.3196 27.3503 16.1721L26.8934 -1.17555e-06L23.2515 -1.01635e-06ZM13.8301 32.0669C13.8301 26.6874 17.608 22.1936 22.6474 21.1088L22.0234 42.8707C17.3004 41.5622 13.8323 37.2228 13.8323 32.0669L13.8301 32.0669ZM6.97187 67.328C6.97187 58.4211 13.3865 51.0239 21.8317 49.5185L20.8153 84.925C12.8761 83.0305 6.97187 75.8727 6.97187 67.328ZM43.0281 67.328C43.0281 75.8369 37.1751 82.9678 29.2894 84.9004L28.2909 49.5409C36.6737 51.0955 43.0259 58.4636 43.0259 67.328L43.0281 67.328ZM36.1699 32.0669C36.1699 37.1758 32.762 41.4839 28.1037 42.835L27.4907 21.1401C32.4589 22.2764 36.1699 26.7344 36.1699 32.0669Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div className="w-full border-b-2 border-dark-charcoal ">
+          <div className="w-1450p ml-auto border-dark-charcoal pt-100p pb-75p px-63p  ">
+            <blockquote className="text-60 text-white font-OR leading-65p pb-140p ">
+              This isn't something that just shows up on the rack. There are
+              years of experience built into it.
+            </blockquote>
+            <span className="inline-block text-16 text-white font-RM5 uppercase ">
+              Virat Kohli
+            </span>
+          </div>
+        </div>
       </section>
     </main>
   );

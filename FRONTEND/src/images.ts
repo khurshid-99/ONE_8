@@ -81,7 +81,19 @@ import PDShoe3 from "../src/assets/product_detils/shoe3.jpg";
 import PDShoe4 from "../src/assets/product_detils/shoe4.jpg";
 import PDShoe5 from "../src/assets/product_detils/shoe5.jpg";
 
+import PDFrame1 from "../src/assets/product_detils/PDFrame1.png";
+import PDFrame2 from "../src/assets/product_detils/PDFrame2.png";
+
+import PDDesignWithPurpose1 from "../src/assets/product_detils/PDDesignWithPurpose1.png";
+import PDDesignWithPurpose2 from "../src/assets/product_detils/PDDesignWithPurpose2.png";
+import PDDesignWithPurpose3 from "../src/assets/product_detils/PDDesignWithPurpose3.png";
+
 export {
+  PDDesignWithPurpose1,
+  PDDesignWithPurpose2,
+  PDDesignWithPurpose3,
+  PDFrame1,
+  PDFrame2,
   PDShoe1,
   PDShoe2,
   PDShoe3,
